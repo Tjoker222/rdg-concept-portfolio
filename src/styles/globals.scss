@@ -5,13 +5,13 @@
 @layer base {
   * {
     &::-webkit-scrollbar-track {
-      @apply bg-violet-100;
+      @apply bg-white;
     }
     &::-webkit-scrollbar {
-      @apply bg-violet-100 w-[0.5rem];
+      @apply bg-white w-[0.5rem];
     }
     &::-webkit-scrollbar-thumb {
-      @apply bg-violet-500 rounded-full;
+      @apply bg-black rounded-full;
     }
   }
 
