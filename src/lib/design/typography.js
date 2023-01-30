@@ -241,6 +241,12 @@ const typographies = {
       letterSpacing: "-0.03em",
     },
     "6xl": {
+      fontSize: "6.4rem",
+      fontWeight: "700",
+      lineHeight: "110%",
+      letterSpacing: "-0.04em",
+    },
+    "7xl": {
       fontSize: "7.2rem",
       fontWeight: "700",
       lineHeight: "110%",
