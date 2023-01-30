@@ -48,7 +48,7 @@ export const Explore = () => {
         animate={control}
       >
         <div className="flex flex-col gap-y-[4rem]">
-          <div className="flex flex-row gap-x-sm w-full items-center justify-center sm:items-start sm:px-[21rem]">
+          <div className="flex flex-row gap-x-sm w-full sm:justify-start justify-center sm:px-[21rem]">
             <p className="font-inter text-style-bold-xl sm:text-style-bold-5xl text-transparent bg-clip-text bg-gradient-to-b from-violet-100 to-violet-200">
               O que
             </p>
