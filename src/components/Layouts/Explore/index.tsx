@@ -48,29 +48,35 @@ export const Explore = () => {
         animate={control}
       >
         <div className="flex flex-col gap-y-[4rem]">
-          <div className="flex flex-row gap-x-sm px-[21rem]">
-            <p className="font-inter text-style-bold-5xl text-transparent bg-clip-text bg-gradient-to-b from-violet-100 to-violet-200">
+          <div className="flex flex-row gap-x-sm w-full items-center justify-center sm:items-start sm:px-[21rem]">
+            <p className="font-inter text-style-bold-xl sm:text-style-bold-5xl text-transparent bg-clip-text bg-gradient-to-b from-violet-100 to-violet-200">
               O que
             </p>
-            <span className="font-inter text-style-bold-5xl text-black">
+            <span className="font-inter text-style-bold-xl sm:text-style-bold-5xl text-black">
               gostamos de criar
             </span>
           </div>
           <div className="flex flex-col gap-y-[1rem]">
-            <div className="w-fit flex flex-row gap-x-[2rem] items-start px-[9.1rem]">
-              <p className="text-black font-inter text-style-bold-xl">
-                Explore
-              </p>
-              <div className="h-[7.2rem] w-[0.6rem] bg-gray-900" />
-            </div>
-            <Tabs.Root
-              onValueChange={handleChangeBodyOnChangeTab}
-              defaultValue={bodyTab}
-              className='flex flex-col gap-y-[2rem]'
-            >
-              <Menu bodyTab={bodyTab} />
-              <Body bodyTab={bodyTab} />
-            </Tabs.Root>
+            {isMobile ? (
+              <Body bodyTab={"projects"} />
+            ) : (
+              <>
+                <div className="w-fit flex flex-row gap-x-[2rem] items-start px-[9.1rem]">
+                  <p className="text-black font-inter text-style-bold-xl">
+                    Explore
+                  </p>
+                  <div className="h-[7.2rem] w-[0.6rem] bg-gray-900" />
+                </div>
+                <Tabs.Root
+                  onValueChange={handleChangeBodyOnChangeTab}
+                  defaultValue={bodyTab}
+                  className="flex flex-col gap-y-[2rem]"
+                >
+                  <Menu bodyTab={bodyTab} />
+                  <Body bodyTab={bodyTab} />
+                </Tabs.Root>
+              </>
+            )}
           </div>
         </div>
       </motion.div>
@@ -109,11 +115,12 @@ const Menu = ({ bodyTab }: MenuProps) => {
 
 const Body = ({ bodyTab }: BodyProps) => {
   const content = [{ name: "enutri" }, { name: "crypto" }, { name: "barber" }];
+  const { isMobile } = useResponsiveLayout();
 
   return (
-    <div className="w-full h-fit flex flex-col items-center gap-lg px-[21rem]">
-      <Tabs.Content value="projects">
-        <div className="flex flex-row gap-x-[4.2rem]">
+    <div className="w-full h-fit flex flex-col items-center gap-lg px-[2.4rem] sm:px-[21rem]">
+      {isMobile ? (
+        <div className="flex flex-col gap-y-[3.4rem]">
           {content.map((project) => (
             <CardProject
               src={project.name}
@@ -122,19 +129,33 @@ const Body = ({ bodyTab }: BodyProps) => {
             />
           ))}
         </div>
-      </Tabs.Content>
+      ) : (
+        <>
+          <Tabs.Content value="projects">
+            <div className="flex flex-row gap-x-[4.2rem]">
+              {content.map((project) => (
+                <CardProject
+                  src={project.name}
+                  description={project.name}
+                  key={project.name}
+                />
+              ))}
+            </div>
+          </Tabs.Content>
 
-      <Tabs.Content value="videos">
-        <div className="flex flex-row gap-x-[4.2rem]">
-          {content.map((project) => (
-            <CardProject
-              src={project.name}
-              description={project.name}
-              key={project.name}
-            />
-          ))}
-        </div>
-      </Tabs.Content>
+          <Tabs.Content value="videos">
+            <div className="flex flex-row gap-x-[4.2rem]">
+              {content.map((project) => (
+                <CardProject
+                  src={project.name}
+                  description={project.name}
+                  key={project.name}
+                />
+              ))}
+            </div>
+          </Tabs.Content>
+        </>
+      )}
     </div>
   );
 };
