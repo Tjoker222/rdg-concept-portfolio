@@ -28,7 +28,7 @@ export const Navbar = () => {
           {isMobile ? (
             <div className="relative w-[3.2rem] h-[3.2rem]">
               <Image
-                src="/list.svg"
+                src="/Lista.svg"
                 alt="Lista"
                 fill={true}
                 style={{ objectFit: "cover" }}
