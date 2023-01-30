@@ -1,17 +1,18 @@
 import Image from "next/image";
 import { Button } from "@/components/Button";
+import { useResponsiveLayout } from "@/contexts/ResponsiveLayoutProvider";
 
-type BusinessProps = {
-  isMobile: boolean;
-};
 
-export const Business = ({isMobile}: BusinessProps) => {
+export const Business = () => {
+
+  const {isMobile} = useResponsiveLayout()
+
   return (
     <>
       <div className="w-full flex flex-row mt-[5rem] sm:mt-[8rem] px-[3.4rem] sm:px-[21rem]">
         <div className="flex flex-col gap-y-[4rem] sm:gap-y-[10.6rem] items-center sm:items-start">
           <div className="flex flex-col gap-y-[2.8rem]">
-            <p className="sm:w-[89rem] font-inter text-center text-style-bold-5xl sm:text-style-bold-6xl text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
+            <p className="sm:w-[89rem] font-inter text-center sm:text-start text-style-bold-5xl sm:text-style-bold-6xl text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
               RDG Concept
               <span className="font-inter text-style-bold-5xl sm:text-style-bold-6xl text-black">
                 : seu business com um novo conceito.

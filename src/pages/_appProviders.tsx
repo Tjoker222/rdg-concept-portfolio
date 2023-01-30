@@ -1,3 +1,5 @@
+import { ResponsiveLayoutProvider } from "@/contexts/ResponsiveLayoutProvider";
+import { useEffect, useState } from "react";
 import DefaultLayout from "../components/Layouts/DefaultLayout";
 
 export function AppProviders({
@@ -7,5 +9,21 @@ export function AppProviders({
   children: JSX.Element;
   pageProps: any;
 }) {
-  return <DefaultLayout>{children}</DefaultLayout>;
+  const [showChild, setShowChild] = useState(false);
+  useEffect(() => {
+    setShowChild(true);
+  }, []);
+
+  if (!showChild) {
+    return null;
+  }
+  if (typeof window === "undefined") {
+    return <></>;
+  } else {
+    return (
+      <ResponsiveLayoutProvider>
+        <DefaultLayout>{children}</DefaultLayout>
+      </ResponsiveLayoutProvider>
+    );
+  }
 }

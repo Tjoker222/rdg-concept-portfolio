@@ -10,7 +10,7 @@ export const Footer = () => {
   ];
   return (
     <>
-      <div className="flex flex-col mt-[15rem] sm:mt-[10rem] gap-y-[1.8rem] sm:gap-y-[4.3rem] w-full sm:px-[14rem] sm:py-[7.5rem] justify-between items-center sm:items-start">
+      <div className="flex flex-col mt-[15rem] sm:mt-[0rem] gap-y-[1.8rem] sm:gap-y-[4.3rem] w-full sm:px-[14rem] sm:py-[7.5rem] justify-between items-center sm:items-start">
         <div className="flex flex-row gap-x-[2.5rem]">
           {socialLinks.map((link) => (
             <Icon

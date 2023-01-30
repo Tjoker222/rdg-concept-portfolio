@@ -14,16 +14,6 @@ const Home: NextPage = () => {
   const control = useAnimation();
   const [ref, inView] = useInView();
 
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    if (window.innerWidth < 600) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
-  }, []);
-
   useEffect(() => {
     if (inView) {
       control.start("visible");
@@ -35,7 +25,7 @@ const Home: NextPage = () => {
   return (
     <>
       <div className="w-full flex flex-col gap-y-[9.7rem] sm:gap-y-[26rem]">
-        <Business isMobile/>
+        <Business />
         <motion.div
           className="box"
           ref={ref}
@@ -43,7 +33,7 @@ const Home: NextPage = () => {
           initial="hidden"
           animate={control}
         >
-          <Mission isMobile/>
+          <Mission />
         </motion.div>
       </div>
     </>

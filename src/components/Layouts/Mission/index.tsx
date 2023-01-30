@@ -1,12 +1,10 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useResponsiveLayout } from "@/contexts/ResponsiveLayoutProvider";
 
-type MissionProps = {
-  isMobile: boolean;
-};
+export const Mission = () => {
+  const { isMobile } = useResponsiveLayout();
 
-export const Mission = ({ isMobile }: MissionProps) => {
   return (
     <>
       <div className="w-full flex flex-row gap-x-[3.3rem] sm:px-[9.1rem]">
@@ -57,7 +55,7 @@ const MotionMission = () => {
             style={{ objectFit: "cover" }}
           />
         </div>
-        <p className="w-fit text-justify font-inter text-style-bold-sx text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
+        <p className="w-fit text-justify font-inter text-style-bold-2xl text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
           Logotipo + Website = Vendas Online
         </p>
       </motion.div>
@@ -79,7 +77,7 @@ const MotionMission = () => {
             style={{ objectFit: "cover" }}
           />
         </div>
-        <p className="sm:w-[50rem] text-justify font-inter text-style-bold-sx text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
+        <p className="sm:w-[50rem] text-justify font-inter text-style-bold-2xl text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
           Um ambiente claro e sustentável para receber seus clientes de forma
           virtual.
         </p>
