@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 interface IconProps {
   iconUrl: string;
   description: string;
