@@ -26,7 +26,7 @@ export const Navbar = () => {
             RDG Concept
           </p>
         </div>
-        <div className="flex flex-row gap-x-[5.3rem]">
+        <div className="hidden sm:flex flex-row gap-x-[5.3rem]">
           {navigationLink.map((nav) => (
             <p
               className="text-style-regular-base font-inter hover:text-black text-gray-700 hover:cursor-pointer"
@@ -36,7 +36,7 @@ export const Navbar = () => {
             </p>
           ))}
         </div>
-        <div className="flex flex-row gap-x-[1.5rem]">
+        <div className="hidden sm:flex flex-row gap-x-[1.5rem]">
           <p className="text-style-regular-base font-inter hover:text-black text-gray-700 hover:cursor-pointer">
             PT
           </p>

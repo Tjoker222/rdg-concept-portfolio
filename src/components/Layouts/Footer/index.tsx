@@ -10,7 +10,7 @@ export const Footer = () => {
   ];
   return (
     <>
-      <div className="flex flex-col gap-y-[4.3rem] w-full px-[14rem] py-[7.5rem] justify-between items-start">
+      <div className="flex flex-col mt-[15rem] sm:mt-[10rem] gap-y-[1.8rem] sm:gap-y-[4.3rem] w-full sm:px-[14rem] sm:py-[7.5rem] justify-between items-center sm:items-start">
         <div className="flex flex-row gap-x-[2.5rem]">
           {socialLinks.map((link) => (
             <Icon
@@ -20,7 +20,7 @@ export const Footer = () => {
             />
           ))}
         </div>
-        <p className="font-inter text-style-medium-xl text-gray-500">
+        <p className="w-full font-inter text-center sm:text-start text-style-medium-sx sm:text-style-medium-xl text-gray-500">
           RDG Concept · Software Development and Design 2022
         </p>
       </div>

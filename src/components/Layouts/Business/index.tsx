@@ -1,30 +1,28 @@
 import Image from "next/image";
 import { Button } from "@/components/Button";
 
-export const Business = () => {
-  const socialLinks = [
-    { name: "instagram" },
-    { name: "facebook" },
-    { name: "behance" },
-    { name: "tiktok" },
-  ];
+type BusinessProps = {
+  isMobile: boolean;
+};
+
+export const Business = ({isMobile}: BusinessProps) => {
   return (
     <>
-      <div className="w-full flex flex-row mt-[8rem] px-[21rem]">
-        <div className="flex flex-col gap-y-[10.6rem] items-start">
+      <div className="w-full flex flex-row mt-[5rem] sm:mt-[8rem] px-[3.4rem] sm:px-[21rem]">
+        <div className="flex flex-col gap-y-[4rem] sm:gap-y-[10.6rem] items-center sm:items-start">
           <div className="flex flex-col gap-y-[2.8rem]">
-            <p className="w-[89rem] font-inter text-style-bold-6xl text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
+            <p className="sm:w-[89rem] font-inter text-center text-style-bold-5xl sm:text-style-bold-6xl text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
               RDG Concept
-              <span className="font-inter text-style-bold-6xl text-black">
+              <span className="font-inter text-style-bold-5xl sm:text-style-bold-6xl text-black">
                 : seu business com um novo conceito.
               </span>
             </p>
-            <p className="w-[57rem] font-inter text-justify text-style-medium-2xl text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
+            <p className="sm:w-[57rem] font-inter text-center sm:text-justify text-style-medium-base sm:text-style-medium-2xl text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
               Revolucionamos o mercado de identidade visual e design de
               interface para Apps e Websites.
             </p>
           </div>
-          <div className="flex flex-row gap-x-xl">
+          <div className="flex flex-col gap-y-xl sm:flex-row sm:gap-x-xl">
             <Button
               title="Já possuo negócio"
               size="small"
@@ -37,7 +35,7 @@ export const Business = () => {
             />
           </div>
         </div>
-        <div className="flex relative">
+        {!isMobile && <div className="hidden sm:flex relative">
           <div className="absolute right-[5rem] top-[10rem] flex flex-col items-center">
             <div className="h-[10rem] w-[0rem] border-dashed border-2 border-gray-800" />
             <div className="w-[10.7rem] h-[10.7rem] relative">
@@ -86,7 +84,7 @@ export const Business = () => {
             </div>
             <div className="h-[10rem] w-[0rem] border-dashed border-2 border-gray-800" />
           </div>
-        </div>
+        </div>}
       </div>
     </>
   );
