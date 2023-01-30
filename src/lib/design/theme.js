@@ -12,7 +12,9 @@ const theme = {
       400: "#878787",
       500: "#888888",
       600: '#3a3a3a',
-      700: '#7c7c7c'
+      700: '#7c7c7c',
+      800: '#bfbfbf',
+      900: '#d9d9d9'
     },
   },
   fontSize: {
@@ -25,7 +27,8 @@ const theme = {
     "3xl": "3.2rem",
     "4xl": "3.6rem",
     "5xl": "4rem",
-    "6xl": "7.2rem",
+    "6xl": "6.4rem",
+    "7xl": "7.2rem"
   },
   fontFamily: { "inter": "Inter" },
   borderRadius: {
