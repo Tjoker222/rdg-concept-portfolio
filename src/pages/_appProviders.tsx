@@ -1,4 +1,5 @@
 import { ResponsiveLayoutProvider } from "@/contexts/ResponsiveLayoutProvider";
+import { SidebarMobileProvider } from "@/contexts/SidebarMobileProvider";
 import { useEffect, useState } from "react";
 import DefaultLayout from "../components/Layouts/DefaultLayout";
 
@@ -22,7 +23,9 @@ export function AppProviders({
   } else {
     return (
       <ResponsiveLayoutProvider>
-        <DefaultLayout>{children}</DefaultLayout>
+        <SidebarMobileProvider>
+          <DefaultLayout>{children}</DefaultLayout>
+        </SidebarMobileProvider>
       </ResponsiveLayoutProvider>
     );
   }
