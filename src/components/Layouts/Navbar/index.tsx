@@ -1,5 +1,8 @@
 import { useResponsiveLayout } from "@/contexts/ResponsiveLayoutProvider";
+import { SidebarMobileType } from "../../../types/sidebar-mobile";
+import { useSidebarMobileContext } from "../../../contexts/SidebarMobileProvider";
 import Image from "next/image";
+import { useEffect } from "react";
 
 export const Navbar = () => {
   const navigationLink = [
@@ -11,6 +14,19 @@ export const Navbar = () => {
     { name: "Contato" },
   ];
   const { isMobile } = useResponsiveLayout();
+
+  const { setCurrentSidebarState, CurrentSidebarState } =
+    useSidebarMobileContext();
+
+  function handleSidebarMobileChange(state: SidebarMobileType) {
+    setCurrentSidebarState(state);
+  }
+
+  useEffect(() => {
+    CurrentSidebarState === SidebarMobileType.OPEN
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "auto");
+  }, [CurrentSidebarState]);
 
   return (
     <>
@@ -26,7 +42,10 @@ export const Navbar = () => {
           </div>
 
           {isMobile ? (
-            <div className="relative w-[3.2rem] h-[3.2rem]">
+            <div
+              className="relative w-[3.2rem] h-[3.2rem]"
+              onClick={() => handleSidebarMobileChange(SidebarMobileType.OPEN)}
+            >
               <Image
                 src="/Lista.svg"
                 alt="Lista"
