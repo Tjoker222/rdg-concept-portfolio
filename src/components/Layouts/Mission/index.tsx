@@ -1,35 +1,61 @@
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { useResponsiveLayout } from "@/contexts/ResponsiveLayoutProvider";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
+
+const boxVariant = {
+  visible: { opacity: 1, transition: { duration: 0.5 } },
+  hidden: { opacity: 0 },
+};
 
 export const Mission = () => {
   const { isMobile } = useResponsiveLayout();
 
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    } else {
+      control.start("hidden");
+    }
+  }, [control, inView]);
+
   return (
     <>
-      <div className="w-full flex flex-row gap-x-[3.3rem] sm:px-[9.1rem]">
-        <div className="hidden sm:flex flex-row gap-x-[2.5rem]">
-          <p className="font-inter text-style-medium-xl text-black">Missão</p>
-          <div className="h-[7.2rem] w-[0.6rem] bg-gray-900" />
-        </div>
-        <div className="w-full flex flex-col sm:inline-flex gap-y-[5.4rem] h-[55rem]  bg-[url('/background-violet-mobile.svg')] sm:bg-[url('/background-violet.svg')] bg-cover items-start sm:relative">
-          <div className="flex flex-col gap-y-[2.8rem] mt-[7.5rem] px-[3.2rem]">
-            <p className="sm:w-[72rem] font-inter text-style-bold-2xl sm:text-style-bold-3xl text-transparent bg-clip-text bg-gradient-to-b from-violet-100 to-violet-200">
-              Segredos
-              <span className="font-inter text-style-bold-2xl sm:text-style-bold-3xl text-black">
-                : que fazem meus clientes vender mais com seus websites.
-              </span>
-            </p>
-            <p className="sm:w-[50rem] font-inter text-black text-style-medium-base sm:text-style-medium-xl text-justify">
-              Você vera através dos meus clientes o quão benéfico e você possuir
-              um website para impulsionar as suas vendas na internet, e o melhor
-              de tudo como fazer sua marca conhecida.{" "}
-            </p>
-            {isMobile && <NormalMission />}
+      <motion.div
+        className="box"
+        ref={ref}
+        variants={boxVariant}
+        initial="hidden"
+        animate={control}
+      >
+        <div className="w-full flex flex-row gap-x-[3.3rem] sm:px-[9.1rem]">
+          <div className="hidden sm:flex flex-row gap-x-[2.5rem]">
+            <p className="font-inter text-style-medium-xl text-black">Missão</p>
+            <div className="h-[7.2rem] w-[0.6rem] bg-gray-900" />
           </div>
-          {!isMobile && <MotionMission />}
+          <div className="w-full flex flex-col sm:inline-flex gap-y-[5.4rem] h-[55rem]  bg-[url('/background-violet-mobile.svg')] sm:bg-[url('/background-violet.svg')] bg-cover items-start sm:relative">
+            <div className="flex flex-col gap-y-[2.8rem] mt-[7.5rem] px-[3.2rem]">
+              <p className="sm:w-[72rem] font-inter text-style-bold-2xl sm:text-style-bold-3xl text-transparent bg-clip-text bg-gradient-to-b from-violet-100 to-violet-200">
+                Segredos
+                <span className="font-inter text-style-bold-2xl sm:text-style-bold-3xl text-black">
+                  : que fazem meus clientes vender mais com seus websites.
+                </span>
+              </p>
+              <p className="sm:w-[50rem] font-inter text-black text-style-medium-base sm:text-style-medium-xl text-justify">
+                Você vera através dos meus clientes o quão benéfico e você
+                possuir um website para impulsionar as suas vendas na internet,
+                e o melhor de tudo como fazer sua marca conhecida.{" "}
+              </p>
+              {isMobile && <NormalMission />}
+            </div>
+            {!isMobile && <MotionMission />}
+          </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
