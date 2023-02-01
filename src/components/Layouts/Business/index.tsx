@@ -66,7 +66,7 @@ export const Business = () => {
           </div>
           {!isMobile && (
             <div className="flex relative z-50">
-              <div className="absolute right-[40rem] top-[5rem] flex flex-col items-center">
+              <div className="absolute right-[35rem] top-[5.5rem] flex flex-col items-center">
                 <div className="h-[8rem] w-[0rem] border-dashed border-2 border-gray-800" />
                 <div className="w-[8.7rem] h-[8.7rem] relative">
                   <Image
@@ -78,7 +78,7 @@ export const Business = () => {
                 </div>
                 <div className="h-[8rem] w-[0rem] border-dashed border-2 border-gray-800" />
               </div>
-              <div className="absolute right-[22rem] top-[20rem] flex flex-col items-center">
+              <div className="absolute right-[18rem] top-[20rem] flex flex-col items-center">
                 <div className="h-[8rem] w-[0rem] border-dashed border-2 border-gray-800" />
                 <div className="w-[6.7rem] h-[6.7rem] relative">
                   <Image
@@ -90,7 +90,7 @@ export const Business = () => {
                 </div>
                 <div className="h-[8rem] w-[0rem] border-dashed border-2 border-gray-800" />
               </div>
-              <div className="absolute right-[8rem] bottom-[25rem] flex flex-col items-center">
+              <div className="absolute right-[10rem] bottom-[25rem] flex flex-col items-center">
                 <div className="h-[8rem] w-[0rem] border-dashed border-2 border-gray-800" />
                 <div className="w-[12.7rem] h-[12.7rem] relative">
                   <Image
@@ -102,7 +102,7 @@ export const Business = () => {
                 </div>
                 <div className="h-[8rem] w-[0rem] border-dashed border-2 border-gray-800" />
               </div>
-              <div className="absolute left-[0.5rem] top-[5rem] flex flex-col items-center">
+              <div className="absolute left-[2rem] top-[5rem] flex flex-col items-center">
                 <div className="h-[8rem] w-[0rem] border-dashed border-2 border-gray-800" />
                 <div className="w-[5.5rem] h-[5.5rem] relative">
                   <Image
