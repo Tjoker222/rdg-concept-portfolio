@@ -34,16 +34,16 @@ export const Business = () => {
         initial="hidden"
         animate={control}
       >
-        <div className="w-full flex flex-row mt-[5rem] sm:mt-[5rem] px-[3.4rem] sm:px-[15rem]">
+        <div className="w-full flex flex-row mt-[5rem] sm:mt-[5rem] px-[3.4rem] sm:px-[21rem]">
           <div className="flex w-full flex-col gap-y-[4rem] sm:gap-y-[10.6rem] items-center sm:items-start">
             <div className="flex flex-col gap-y-[2.8rem]">
-              <p className="sm:w-[89rem] font-inter text-center sm:text-start text-style-bold-5xl sm:text-style-bold-5xl text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
+              <p className="sm:w-[60rem] font-inter text-center sm:text-start text-style-bold-5xl sm:text-style-bold-5xl text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
                 RDG Concept
                 <span className="font-inter text-style-bold-5xl sm:text-style-bold-5xl text-black">
                   : seu business com um novo conceito.
                 </span>
               </p>
-              <p className="sm:w-[57rem] font-inter text-center sm:text-justify text-style-medium-base sm:text-style-medium-xl text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
+              <p className="sm:w-[40rem] font-inter text-center sm:text-justify text-style-medium-base sm:text-style-medium-lg text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
                 Revolucionamos o mercado de identidade visual e design de
                 interface para Apps e Websites.
               </p>
