@@ -33,11 +33,13 @@ export const Mission = () => {
         animate={control}
       >
         <div className="w-full flex flex-row gap-x-[3.3rem] sm:px-[9.1rem]">
-          <div className="hidden sm:flex flex-row gap-x-[2.5rem]">
-            <p className="font-inter text-style-medium-xl sm:text-style-medium-base text-black">Missão</p>
+          <div className="hidden sm:flex flex-row gap-x-[2rem]">
+            <p className="font-inter text-style-medium-xl sm:text-style-medium-base text-black">
+              Missão
+            </p>
             <div className="h-[5.2rem] w-[0.6rem] bg-gray-900" />
           </div>
-          <div className="w-full flex flex-col sm:inline-flex gap-y-[5.4rem] h-[50rem]  bg-[url('/background-violet-mobile.svg')] sm:bg-[url('/background-violet.svg')] bg-cover items-start sm:relative">
+          <div className="w-full flex flex-col sm:inline-flex gap-y-[5.4rem] h-[52rem] sm:h-[50rem]  bg-[url('/background-violet-mobile.svg')] sm:bg-[url('/background-violet.svg')] bg-cover items-start sm:relative">
             <div className="flex flex-col gap-y-[2.8rem] mt-[7.5rem] px-[3.2rem]">
               <p className="sm:w-[60rem] font-inter text-style-bold-2xl sm:text-style-bold-2xl text-transparent bg-clip-text bg-gradient-to-b from-violet-100 to-violet-200">
                 Segredos
@@ -157,61 +159,36 @@ const MotionMission = () => {
 };
 
 const NormalMission = () => {
+  const missionMobile = [
+    { title: "Logotipo + Website = Vendas Online" },
+    {
+      title:
+        "Um ambiente claro e sustentável para receber seus clientes de forma virtual.",
+    },
+    { title: "Criar marca de qualidade e reconhecida" },
+    { title: "Venda rápida e intuitiva" },
+  ];
+
   return (
     <>
-      <div className="sm:hidden flex flex-row items-center sm:absolute gap-x-[2.7rem]">
-        <div className="w-[1rem] h-[1rem] relative">
-          <Image
-            src="/ellipse.svg"
-            alt="ellipse"
-            fill={true}
-            style={{ objectFit: "cover" }}
-          />
+      {missionMobile.map((mission) => (
+        <div
+          key={mission.title}
+          className="flex flex-row items-center gap-x-[2.7rem]"
+        >
+          <div className="w-[1rem] h-[1rem] relative">
+            <Image
+              src="/ellipse.svg"
+              alt="ellipse"
+              fill={true}
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <p className="w-fit text-justify font-inter text-style-bold-sx text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
+            {mission.title}
+          </p>
         </div>
-        <p className="w-fit text-justify font-inter text-style-bold-sx text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
-          Logotipo + Website = Vendas Online
-        </p>
-      </div>
-      <div className="sm:hidden flex flex-row items-center sm:absolute gap-x-[2.7rem]">
-        <div className="w-[1rem] h-[1rem] relative">
-          <Image
-            src="/ellipse.svg"
-            alt="ellipse"
-            fill={true}
-            style={{ objectFit: "cover" }}
-          />
-        </div>
-        <p className="sm:w-[50rem] text-justify font-inter text-style-bold-sx text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
-          Um ambiente claro e sustentável para receber seus clientes de forma
-          virtual.
-        </p>
-      </div>
-      <div className="sm:hidden flex flex-row items-center sm:absolute gap-x-[2.7rem]">
-        <div className="w-[1rem] h-[1rem] relative">
-          <Image
-            src="/ellipse.svg"
-            alt="ellipse"
-            fill={true}
-            style={{ objectFit: "cover" }}
-          />
-        </div>
-        <p className="w-fit text-justify font-inter text-style-bold-sx text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
-          Criar marca de qualidade e reconhecida
-        </p>
-      </div>
-      <div className="sm:hidden flex flex-row items-center sm:absolute gap-x-[2.7rem]">
-        <div className="w-[1rem] h-[1rem] relative">
-          <Image
-            src="/ellipse.svg"
-            alt="ellipse"
-            fill={true}
-            style={{ objectFit: "cover" }}
-          />
-        </div>
-        <p className="w-fit text-justify font-inter text-style-bold-sx text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
-          Venda rápida e intuitiva
-        </p>
-      </div>
+      ))}
     </>
   );
 };

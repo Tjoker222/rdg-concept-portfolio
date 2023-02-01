@@ -62,7 +62,7 @@ export const Explore = () => {
             ) : (
               <>
                 <div className="w-fit flex flex-row gap-x-[2rem] items-start px-[9.1rem]">
-                  <p className="text-black font-inter text-style-bold-base">
+                  <p className="text-black font-inter text-style-medium-base">
                     Explore
                   </p>
                   <div className="h-[5.2rem] w-[0.6rem] bg-gray-900" />
@@ -78,6 +78,13 @@ export const Explore = () => {
               </>
             )}
           </div>
+          {!isMobile && (
+            <div className="w-full flex justify-center mt-[2rem]">
+              <p className="font-inter text-style-medium-lg text-gray-400 hover:cursor-pointer">
+                Veja mais
+              </p>
+            </div>
+          )}
         </div>
       </motion.div>
     </>
