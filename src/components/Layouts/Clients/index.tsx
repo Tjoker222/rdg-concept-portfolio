@@ -4,6 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { CardServices } from "@/components/Cards/CardServices";
+import { Icon } from "../Icon";
 
 const boxVariant = {
   visible: { opacity: 1, transition: { duration: 0.5 } },
@@ -31,6 +32,14 @@ export const Clients = () => {
     { name: "Claudio", subtitle: "CEO Seedlisting" },
   ];
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
     <>
       <motion.div
@@ -41,7 +50,34 @@ export const Clients = () => {
         animate={control}
       >
         {isMobile ? (
-          <></>
+          <div className="px-[2.1rem] flex flex-col gap-y-[5.3rem] justify-center items-center">
+            <p className="font-inter text-style-bold-xl text-transparent bg-clip-text bg-gradient-to-b from-violet-100 to-violet-200">
+              Nossos clientes estão felizes
+            </p>
+            <div className="w-full flex flex-col gap-y-[2.3rem]">
+              <div className="w-full flex flex-row justify-between items-center">
+                <Icon
+                  iconUrl="/ArrowBendDownLeft.svg"
+                  description="arrow bend down left"
+                />
+                <p className="font-inter text-style-bold-xl text-black">
+                  Scroll
+                </p>
+                <Icon
+                  iconUrl="/ArrowBendDownRight.svg"
+                  description="arrow bend down right"
+                />
+              </div>
+              <div className="flex w-full flex-row justify-between">
+                <CardServices
+                  title={clientsArr[0].name}
+                  subtitle={clientsArr[0].subtitle}
+                  description={clientsArr[0].name}
+                  mediaType="video"
+                />
+              </div>
+            </div>
+          </div>
         ) : (
           <div className="flex flex-col gap-y-[6rem] px-[18rem]">
             <div className="flex flex-row gap-x-[2.3rem]">
@@ -58,13 +94,14 @@ export const Clients = () => {
             <div className="w-full h-[0.05rem] border-2 border-solid border-gray-100" />
             <div className="flex w-full flex-row justify-between">
               {clientsArr.map((client) => (
-                <CardServices
-                  title={client.name}
-                  subtitle={client.subtitle}
-                  description={client.name}
-                  key={client.name}
-                  mediaType="video"
-                />
+                <div key={client.name}>
+                  <CardServices
+                    title={client.name}
+                    subtitle={client.subtitle}
+                    description={client.name}
+                    mediaType="video"
+                  />
+                </div>
               ))}
             </div>
           </div>

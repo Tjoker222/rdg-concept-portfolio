@@ -19,7 +19,7 @@ export const CardServices = ({
     <>
       {mediaType === "image" ? (
         <div className="flex flex-col gap-y-[1.3rem]">
-          <div className="w-[25rem] h-[30rem] relative">
+          <div className="sm:w-[25rem] h-[30rem] relative">
             <Image
               src={`/${src}.svg`}
               alt={description}
@@ -33,8 +33,8 @@ export const CardServices = ({
           </p>
         </div>
       ) : (
-        <div className="flex flex-col gap-y-[2.7rem]">
-          <div className="bg-white flex justify-center items-center w-[25rem] h-[50rem]">
+        <div className="flex flex-col w-full gap-y-[2.7rem]">
+          <div className="bg-white flex justify-center items-center w-full sm:w-[25rem] h-[50rem]">
             <div className="w-[3.2rem] h-[3.2rem] relative">
               <Image
                 src={`/Play.svg`}
