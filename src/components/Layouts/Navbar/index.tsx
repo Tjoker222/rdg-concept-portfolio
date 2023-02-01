@@ -32,7 +32,7 @@ export const Navbar = () => {
     <>
       <div className="flex w-full px-[2.3rem] py-[2rem] sm:px-[14rem] sm:py-[3rem] justify-between items-center">
         <div className="flex flex-row w-full sm:w-fit justify-between sm:justify-start sm:gap-x-md items-center">
-          <div className="relative w-[6rem] h-[6rem]">
+          <div className="relative w-[5rem] h-[5rem]">
             <Image
               src="/rdg-logo.svg"
               alt="Logo of RDG"
@@ -54,7 +54,7 @@ export const Navbar = () => {
               />
             </div>
           ) : (
-            <p className="text-style-semibold-base font-inter text-gray-600">
+            <p className="text-style-semibold-sm font-inter text-gray-600">
               RDG Concept
             </p>
           )}
@@ -63,7 +63,7 @@ export const Navbar = () => {
           <div className="flex flex-row gap-x-[5.3rem]">
             {navigationLink.map((nav) => (
               <p
-                className="text-style-regular-base font-inter hover:text-black text-gray-700 hover:cursor-pointer"
+                className="text-style-regular-sm font-inter hover:text-black text-gray-700 hover:cursor-pointer"
                 key={nav.name}
               >
                 {nav.name}
@@ -73,10 +73,10 @@ export const Navbar = () => {
         )}
         {!isMobile && (
           <div className="flex flex-row gap-x-[1.5rem]">
-            <p className="text-style-regular-base font-inter hover:text-black text-gray-700 hover:cursor-pointer">
+            <p className="text-style-regular-sm font-inter hover:text-black text-gray-700 hover:cursor-pointer">
               PT
             </p>
-            <p className="text-style-regular-base font-inter hover:text-black text-gray-700 hover:cursor-pointer">
+            <p className="text-style-regular-sm font-inter hover:text-black text-gray-700 hover:cursor-pointer">
               EN
             </p>
           </div>

@@ -77,10 +77,10 @@ export const Innovation = () => {
       >
         <div className="flex flex-col gap-y-[10rem] px-[15rem]">
           <div className="flex flex-row gap-x-sm">
-            <p className="font-inter text-style-bold-5xl text-transparent bg-clip-text bg-gradient-to-b from-violet-100 to-violet-200">
+            <p className="font-inter text-style-bold-2xl text-transparent bg-clip-text bg-gradient-to-b from-violet-100 to-violet-200">
               Por que
             </p>
-            <span className="font-inter text-style-bold-5xl text-black">
+            <span className="font-inter text-style-bold-2xl text-black">
               gostamos de inovar
             </span>
           </div>

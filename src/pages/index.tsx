@@ -15,7 +15,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <div className="w-full flex flex-col gap-y-[9.7rem] sm:gap-y-[15rem]">
+      <div className="w-full flex flex-col gap-y-[9.7rem] sm:gap-y-[10rem]">
         <Business />
         <Mission />
         {!isMobile && <Innovation />}

@@ -47,12 +47,12 @@ export const Explore = () => {
         initial="hidden"
         animate={control}
       >
-        <div className="flex flex-col gap-y-[4rem]">
+        <div className="flex flex-col gap-y-[2rem]">
           <div className="flex flex-row gap-x-sm w-full sm:justify-start justify-center sm:px-[21rem]">
-            <p className="font-inter text-style-bold-xl sm:text-style-bold-5xl text-transparent bg-clip-text bg-gradient-to-b from-violet-100 to-violet-200">
+            <p className="font-inter text-style-bold-xl sm:text-style-bold-2xl text-transparent bg-clip-text bg-gradient-to-b from-violet-100 to-violet-200">
               O que
             </p>
-            <span className="font-inter text-style-bold-xl sm:text-style-bold-5xl text-black">
+            <span className="font-inter text-style-bold-xl sm:text-style-bold-2xl text-black">
               gostamos de criar
             </span>
           </div>
@@ -62,10 +62,10 @@ export const Explore = () => {
             ) : (
               <>
                 <div className="w-fit flex flex-row gap-x-[2rem] items-start px-[9.1rem]">
-                  <p className="text-black font-inter text-style-bold-xl">
+                  <p className="text-black font-inter text-style-bold-base">
                     Explore
                   </p>
-                  <div className="h-[7.2rem] w-[0.6rem] bg-gray-900" />
+                  <div className="h-[5.2rem] w-[0.6rem] bg-gray-900" />
                 </div>
                 <Tabs.Root
                   onValueChange={handleChangeBodyOnChangeTab}
