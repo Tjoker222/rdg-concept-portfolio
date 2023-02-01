@@ -5,11 +5,7 @@ import { Innovation } from "@/components/Layouts/Innovation";
 import { useResponsiveLayout } from "@/contexts/ResponsiveLayoutProvider";
 import { Explore } from "@/components/Layouts/Explore";
 import { Services } from "@/components/Layouts/Services";
-
-const boxVariant = {
-  visible: { opacity: 1, transition: { duration: 0.5 } },
-  hidden: { opacity: 0 },
-};
+import { Clients } from "@/components/Layouts/Clients";
 
 const Home: NextPage = () => {
   const { isMobile } = useResponsiveLayout();
@@ -22,6 +18,7 @@ const Home: NextPage = () => {
         {!isMobile && <Innovation />}
         <Explore/>
         <Services/>
+        <Clients/>
       </div>
     </>
   );

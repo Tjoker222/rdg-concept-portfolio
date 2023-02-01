@@ -92,6 +92,7 @@ export const Services = () => {
                   src={service.src}
                   description={service.description}
                   key={service.title}
+                  mediaType='image'
                 />
               ))}
             </div>
