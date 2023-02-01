@@ -24,7 +24,7 @@ export const Button = ({
     [`bg-white text-black border-2 border-black`]:
       colorVariant === 'secondary',
     ['flex justify-center px-[2.5rem] py-[2rem]']: size === 'small',
-    ['flex justify-center w-[54rem] py-lg']: size === 'medium',
+    ['flex justify-center px-[10rem] py-[2rem] sm:py-[1.5rem]']: size === 'medium',
     ['w-full']: full,
     ['min-w-fit w-fit']: !full,
   });

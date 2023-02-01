@@ -22,14 +22,15 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     ref
   ) => {
     const inputClasses = classNames(
-      `h-[9.3rem]
+      `sm:py-[1.5rem]
+      py-[2rem]
       w-full 
       flex
       items-center
       gap-sm 
       bg-white
       border-[0.1rem]
-      border-black
+      border-[#9f9f9f]
       transition-all 
       duration-300
       px-xl 
@@ -50,7 +51,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         <div className={inputClasses}>
           {label && (
             <label
-              className="text-style-medium-xl font-inter text-gray-500"
+              className="text-style-medium-xl w-full font-inter text-gray-500"
               htmlFor={label
                 .toLowerCase()
                 .trimEnd()
@@ -67,9 +68,12 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             className={`
             focus: outline-none
             text-black
-            text-style-medium-xl 
+            text-style-medium-sm
             font-inter
             w-full h-full
+            placeholder:text-[#888888]
+            placeholder:font-inter
+            placeholder:text-style-medium-sm
             `}
             {...props}
           />

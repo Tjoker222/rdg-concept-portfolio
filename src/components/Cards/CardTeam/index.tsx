@@ -12,14 +12,14 @@ export const CardTeam = ({ name, imageUrl, office }: CardInnovationProps) => {
       <div className={`w-full h-[30rem] relative ${!imageUrl && 'bg-white'}`}>
         {imageUrl && (
           <Image
-            src='/yuri.svg'
+            src={imageUrl}
             alt={name}
             fill={true}
             style={{ objectFit: "cover" }}
           />
         )}
       </div>
-      <p className="text-black font-inter text-style-bold-lg">{name}</p>
+      <p className="text-black font-inter text-style-bold-xl">{name}</p>
       <p className="text-[#888888] font-inter text-style-medium-sm">{office}</p>
     </div>
   );

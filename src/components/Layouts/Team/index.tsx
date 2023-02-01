@@ -26,8 +26,12 @@ export const Team = () => {
       office: "CEO - Lead Product Designer",
       imageUrl: "/yuri.svg",
     },
-    { name: "Tobias", office: "Dev Front End" },
-    { name: "Yuri Rodrigues", office: "CEO - Lead Product Designer" },
+    { name: "Tobias", office: "Lead Dev Front End", imageUrl: "/tob.png" },
+    {
+      name: "Yuri Rodrigues",
+      office: "CEO - Lead Product Designer",
+      imageUrl: "/yuri.svg",
+    },
   ];
 
   return (
