@@ -6,6 +6,7 @@ import { useResponsiveLayout } from "@/contexts/ResponsiveLayoutProvider";
 import { Explore } from "@/components/Layouts/Explore";
 import { Services } from "@/components/Layouts/Services";
 import { Clients } from "@/components/Layouts/Clients";
+import { Team } from "@/components/Layouts/Team";
 
 const Home: NextPage = () => {
   const { isMobile } = useResponsiveLayout();
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
         <Explore/>
         <Services/>
         <Clients/>
+        <Team/>
       </div>
     </>
   );

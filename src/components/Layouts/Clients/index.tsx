@@ -1,7 +1,8 @@
-import Image from "next/image";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
 import { useResponsiveLayout } from "@/contexts/ResponsiveLayoutProvider";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { CardServices } from "@/components/Cards/CardServices";
 import { Icon } from "../Icon";
@@ -12,6 +13,8 @@ const boxVariant = {
 };
 
 export const Clients = () => {
+  const carouselRef = useRef<Splide>(null);
+
   const { isMobile } = useResponsiveLayout();
 
   const control = useAnimation();
@@ -68,14 +71,30 @@ export const Clients = () => {
                   description="arrow bend down right"
                 />
               </div>
-              <div className="flex w-full flex-row justify-between">
-                <CardServices
-                  title={clientsArr[0].name}
-                  subtitle={clientsArr[0].subtitle}
-                  description={clientsArr[0].name}
-                  mediaType="video"
-                />
-              </div>
+              <Splide
+                ref={carouselRef}
+                options={{
+                  type: "loop",
+                  perPage: 1,
+                  perMove: 1,
+                  arrows: false,
+                  pagination: false,
+                }}
+              >
+                {clientsArr.map((client) => (
+                  <SplideSlide
+                    key={client.name}
+                    className='bg-transparent'
+                  >
+                    <CardServices
+                      title={client.name}
+                      subtitle={client.subtitle}
+                      description={client.name}
+                      mediaType="video"
+                    />
+                  </SplideSlide>
+                ))}
+              </Splide>
             </div>
           </div>
         ) : (
@@ -91,19 +110,30 @@ export const Clients = () => {
                 </p>
               </div>
             </div>
-            <div className="w-full h-[0.05rem] border-2 border-solid border-gray-100" />
-            <div className="flex w-full flex-row justify-between">
-              {clientsArr.map((client) => (
-                <div key={client.name}>
-                  <CardServices
-                    title={client.name}
-                    subtitle={client.subtitle}
-                    description={client.name}
-                    mediaType="video"
-                  />
-                </div>
-              ))}
-            </div>
+            <div className="w-full h-[0.005rem] border-[0.1rem] border-solid border-gray-100" />
+            <Splide
+                ref={carouselRef}
+                options={{
+                  type: "loop",
+                  perPage: 4,
+                  perMove: 1,
+                  arrows: false,
+                  pagination: false,
+                }}
+              >
+                {clientsArr.map((client) => (
+                  <SplideSlide
+                    key={client.name}
+                  >
+                    <CardServices
+                      title={client.name}
+                      subtitle={client.subtitle}
+                      description={client.name}
+                      mediaType="video"
+                    />
+                  </SplideSlide>
+                ))}
+              </Splide>
           </div>
         )}
       </motion.div>
