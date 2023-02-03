@@ -66,12 +66,11 @@ const MotionMission = () => {
   return (
     <>
       <motion.div
-        animate={{ y: "2px", x: "2px", opacity: 0 }}
+        animate={{ y: [6, -6], opacity: 0 }}
         transition={{
-          ease: "easeOut",
           repeat: Infinity,
           repeatType: "reverse",
-          duration: 7,
+          duration: 3.5,
         }}
         className="hidden sm:flex flex-row items-center sm:absolute gap-x-[2.7rem] top-[15rem] right-[5rem]"
       >
@@ -88,12 +87,11 @@ const MotionMission = () => {
         </p>
       </motion.div>
       <motion.div
-        animate={{ y: "2px", x: "2px", opacity: 0 }}
+        animate={{ y: [5, -5], opacity: 0 }}
         transition={{
-          ease: "easeOut",
           repeat: Infinity,
           repeatType: "reverse",
-          duration: 6,
+          duration: 2.5,
         }}
         className="hidden sm:flex flex-row items-center sm:absolute gap-x-[2.7rem] bottom-[15rem] left-[12rem]"
       >
@@ -111,12 +109,11 @@ const MotionMission = () => {
         </p>
       </motion.div>
       <motion.div
-        animate={{ y: "2px", x: "2px", opacity: 0 }}
+        animate={{ y: [6, -6], opacity: 0 }}
         transition={{
-          ease: "easeOut",
           repeat: Infinity,
           repeatType: "reverse",
-          duration: 5,
+          duration: 2,
         }}
         className="hidden sm:flex flex-row items-center sm:absolute gap-x-[2.7rem] bottom-[7rem] left-[40rem]"
       >
@@ -133,9 +130,8 @@ const MotionMission = () => {
         </p>
       </motion.div>
       <motion.div
-        animate={{ y: "2px", x: "2px", opacity: 0 }}
+        animate={{ y: [7, -7], opacity: 0 }}
         transition={{
-          ease: "easeOut",
           repeat: Infinity,
           repeatType: "reverse",
           duration: 4,
