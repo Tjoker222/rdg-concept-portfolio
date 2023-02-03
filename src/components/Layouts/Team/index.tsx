@@ -25,12 +25,31 @@ export const Team = () => {
       name: "Yuri Rodrigues",
       office: "CEO - Lead Product Designer",
       imageUrl: "/yuri.svg",
+      social: [
+        { name: "linkedin", link: "s" },
+        { name: "instagram", link: "s" },
+        { name: "facebook", link: "s" },
+        { name: "behance", link: "s" },
+        { name: "tiktok", link: "s" },
+      ],
     },
-    { name: "Tobias", office: "Lead Dev Front End", imageUrl: "/tob.png" },
+    {
+      name: "Tobias",
+      office: "Lead Dev Front End",
+      imageUrl: "/tob.png",
+      social: [
+        { name: "linkedin", link: "s" },
+        { name: "link", link: "s" },
+      ],
+    },
     {
       name: "Yuri Rodrigues",
       office: "CEO - Lead Product Designer",
       imageUrl: "/yuri.svg",
+      social: [
+        { name: "linkedin", link: "s" },
+        { name: "link", link: "s" },
+      ],
     },
   ];
 
@@ -51,6 +70,7 @@ export const Team = () => {
               name={team.name}
               office={team.office}
               key={team.name}
+              social={team.social}
             />
           ))}
         </div>
