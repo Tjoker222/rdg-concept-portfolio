@@ -14,7 +14,7 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
         <div className="w-full flex flex-col items-center justify-between">
           <div className="w-full flex flex-col gap-xl items-center">
             <Navbar />
-            <div className="w-full flex flex-col gap-base items-center">
+            <div className="w-full flex flex-col gap-base items-center mt-[10rem]">
               {children}
             </div>
           </div>

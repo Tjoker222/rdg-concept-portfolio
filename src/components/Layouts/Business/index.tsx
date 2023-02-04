@@ -78,7 +78,7 @@ export const Business = () => {
             </motion.div>
           </div>
           {!isMobile && (
-            <div className="flex relative z-50">
+            <div className="flex relative">
               <div className="absolute right-[35rem] top-[5.5rem] flex flex-col items-center">
                 <div className="h-[8rem] w-[0rem] border-dashed border-2 border-gray-800" />
                 <motion.div

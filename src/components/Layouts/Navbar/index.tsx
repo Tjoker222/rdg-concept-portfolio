@@ -2,7 +2,7 @@ import { useResponsiveLayout } from "@/contexts/ResponsiveLayoutProvider";
 import { SidebarMobileType } from "../../../types/sidebar-mobile";
 import { useSidebarMobileContext } from "../../../contexts/SidebarMobileProvider";
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export const Navbar = () => {
   const navigationLink = [
@@ -13,6 +13,8 @@ export const Navbar = () => {
     { name: "Equipe" },
     { name: "Contato" },
   ];
+  const [showBackground, setShowBackground] = useState(false);
+
   const { isMobile } = useResponsiveLayout();
 
   const { setCurrentSidebarState, CurrentSidebarState } =
@@ -22,15 +24,33 @@ export const Navbar = () => {
     setCurrentSidebarState(state);
   }
 
+  const handleWithScroll = (pageYOffset: number) => {
+    if (pageYOffset > 100) {
+      setShowBackground(true);
+    } else {
+      setShowBackground(false);
+    }
+  };
+
   useEffect(() => {
     CurrentSidebarState === SidebarMobileType.OPEN
       ? (document.body.style.overflow = "hidden")
       : (document.body.style.overflow = "auto");
+    const onScroll = () => handleWithScroll(window.pageYOffset);
+    window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, [CurrentSidebarState]);
 
   return (
     <>
-      <div className="flex w-full px-[2.3rem] py-[2rem] sm:px-[14rem] sm:py-[3rem] justify-between items-center">
+      <div
+        className={`flex w-full fixed top-0 z-50 ${
+          showBackground
+            ? "backdrop-blur-sm shadow-md shadow-gray-200 bg-gray-50/80"
+            : "bg-gray-50"
+        } px-[2.3rem] sm:px-[14rem] sm:py-[2rem] justify-between items-center`}
+      >
         <div className="flex flex-row w-full sm:w-fit justify-between sm:justify-start sm:gap-x-md items-center">
           <div className="relative w-[5rem] h-[5rem]">
             <Image
