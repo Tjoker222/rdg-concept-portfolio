@@ -50,14 +50,14 @@ export const Business = () => {
               </p>
             </div>
             <div className="flex flex-col gap-y-xl sm:flex-row sm:gap-x-xl">
-              <Link href={"https://calendly.com/rdgconcept/my-own-business"}>
+              <Link href={"https://calendly.com/rdgconcept/my-own-business"} target='_blank'>
                 <Button
                   title="Já possuo negócio"
                   size="small"
                   colorVariant="primary"
                 />
               </Link>
-              <Link href={"https://calendly.com/rdgconcept/start-new-business"}>
+              <Link href={"https://calendly.com/rdgconcept/start-new-business"} target='_blank'>
                 <Button
                   title="Começar negócio"
                   size="small"
