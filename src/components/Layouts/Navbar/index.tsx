@@ -45,11 +45,11 @@ export const Navbar = () => {
   return (
     <>
       <div
-        className={`flex w-full fixed top-0 z-50 ${
+        className={`flex w-full fixed top-0 z-50 py-[2rem] ${
           showBackground
             ? "backdrop-blur-sm shadow-md shadow-gray-200 bg-gray-50/80"
             : "bg-gray-50"
-        } px-[2.3rem] sm:px-[14rem] sm:py-[2rem] justify-between items-center`}
+        } px-[2.3rem] sm:px-[14rem] sm:py-[3rem] justify-between items-center`}
       >
         <div className="flex flex-row w-full sm:w-fit justify-between sm:justify-start sm:gap-x-md items-center">
           <div className="relative w-[5rem] h-[5rem]">

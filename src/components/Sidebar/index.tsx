@@ -45,11 +45,11 @@ export function Sidebar() {
             animate={{ x: 0 }}
             exit={{ x: 100 }}
             id="header"
-            className={`w-full z-50 h-full bg-white dark:bg-gray-700 transition-all flex fixed top-0 flex-col gap-y-xl px-[2.3rem] py-[2rem]`}
+            className={`w-full z-[60] h-full bg-white dark:bg-gray-700 transition-all flex fixed top-0 flex-col gap-y-xl px-[2.3rem] py-[2rem]`}
           >
             <div className="flex flex-row w-full justify-between items-center">
               <Link href={"/"} prefetch={false}>
-                <div className="relative w-[6.1rem] h-[6rem]">
+                <div className="relative w-[5rem] h-[5rem]">
                   <Image
                     src="/rdg-logo.svg"
                     alt="Logo of RDG"
