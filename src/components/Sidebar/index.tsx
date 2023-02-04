@@ -37,7 +37,7 @@ export function Sidebar() {
   function tabBar(name: string) {
     scrollFun(name);
     setSelectedTopic(name);
-    setCurrentSidebarState(SidebarMobileType.CLOSE)
+    setCurrentSidebarState(SidebarMobileType.CLOSE);
   }
 
   return (
@@ -62,7 +62,12 @@ export function Sidebar() {
           >
             <div className="flex flex-row w-full justify-between items-center">
               <Link href={"/"} prefetch={false}>
-                <div className="relative w-[5rem] h-[5rem]">
+                <div
+                  className="relative w-[5rem] h-[5rem]"
+                  onClick={() => {
+                    tabBar("home");
+                  }}
+                >
                   <Image
                     src="/rdg-logo.svg"
                     alt="Logo of RDG"
@@ -94,7 +99,13 @@ export function Sidebar() {
                   }}
                 >
                   <div className="flex flex-row gap-x-[1.9rem] items-center cursor-pointer hover:brightness-75 transition-all">
-                    <h5 className={`font-inter text-style-medium-xl ${selectedTopic===option.tab?'text-black':'text-gray-700'}`}>
+                    <h5
+                      className={`font-inter text-style-medium-xl ${
+                        selectedTopic === option.tab
+                          ? "text-black"
+                          : "text-gray-700"
+                      }`}
+                    >
                       {option.name}
                     </h5>
                   </div>

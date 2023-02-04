@@ -6,12 +6,12 @@ import { useEffect, useState } from "react";
 
 export const Navbar = () => {
   const navigationLink = [
-    { name: "Home", tab: 'home' },
-    { name: "Missão", tab:'mission' },
-    { name: "Explore", tab: 'explore' },
-    { name: "Serviços", tab: 'services' },
-    { name: "Equipe", tab: 'team' },
-    { name: "Contato", tab: 'contact' },
+    { name: "Home", tab: "home" },
+    { name: "Missão", tab: "mission" },
+    { name: "Explore", tab: "explore" },
+    { name: "Serviços", tab: "services" },
+    { name: "Equipe", tab: "team" },
+    { name: "Contato", tab: "contact" },
   ];
   const [showBackground, setShowBackground] = useState(false);
 
@@ -65,7 +65,12 @@ export const Navbar = () => {
         } px-[2.3rem] sm:px-[14rem] sm:py-[3rem] justify-between items-center`}
       >
         <div className="flex flex-row w-full sm:w-fit justify-between sm:justify-start sm:gap-x-md items-center">
-          <div className="relative w-[5rem] h-[5rem]">
+          <div
+            className="relative w-[5rem] h-[5rem]"
+            onClick={() => {
+              tabBar("home");
+            }}
+          >
             <Image
               src="/rdg-logo.svg"
               alt="Logo of RDG"
@@ -96,7 +101,9 @@ export const Navbar = () => {
           <div className="flex flex-row gap-x-[5.3rem]">
             {navigationLink.map((nav) => (
               <p
-                className={`text-style-regular-sm font-inter ${selectedTopic===nav.tab?'text-black':'text-gray-700'} hover:cursor-pointer`}
+                className={`text-style-regular-sm font-inter ${
+                  selectedTopic === nav.tab ? "text-black" : "text-gray-700"
+                } hover:cursor-pointer`}
                 key={nav.name}
                 onClick={() => {
                   tabBar(nav.tab);
