@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { useSidebarMobileContext } from "@/contexts/SidebarMobileProvider";
 import { SidebarMobileType } from "@/types/sidebar-mobile";

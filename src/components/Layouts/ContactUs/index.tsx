@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useResponsiveLayout } from "@/contexts/ResponsiveLayoutProvider";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { Input } from "@/components/Input";
 import { Button } from "@/components/Button";
