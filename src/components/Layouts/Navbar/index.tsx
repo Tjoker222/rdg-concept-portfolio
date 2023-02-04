@@ -96,7 +96,7 @@ export const Navbar = () => {
           <div className="flex flex-row gap-x-[5.3rem]">
             {navigationLink.map((nav) => (
               <p
-                className="text-style-regular-sm font-inter hover:text-black text-gray-700 hover:cursor-pointer"
+                className={`text-style-regular-sm font-inter ${selectedTopic===nav.tab?'text-black':'text-gray-700'} hover:cursor-pointer`}
                 key={nav.name}
                 onClick={() => {
                   tabBar(nav.tab);
