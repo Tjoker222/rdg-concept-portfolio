@@ -46,6 +46,7 @@ export const Explore = () => {
         variants={boxVariant}
         initial="hidden"
         animate={control}
+        id='explore'
       >
         <div className="flex flex-col gap-y-[2rem]">
           <div className="flex flex-row gap-x-sm w-full sm:justify-start justify-center sm:px-[21rem]">

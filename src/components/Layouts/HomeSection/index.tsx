@@ -12,7 +12,7 @@ const boxVariant = {
   hidden: { opacity: 0 },
 };
 
-export const Business = () => {
+export const HomeSection = () => {
   const { isMobile } = useResponsiveLayout();
 
   const control = useAnimation();
@@ -34,6 +34,7 @@ export const Business = () => {
         variants={boxVariant}
         initial="hidden"
         animate={control}
+        id="home"
       >
         <div className="w-full flex flex-row mt-[5rem] sm:mt-[5rem] px-[3.4rem] sm:px-[21rem]">
           <div className="flex w-full flex-col gap-y-[4rem] sm:gap-y-[10.6rem] items-center sm:items-start">

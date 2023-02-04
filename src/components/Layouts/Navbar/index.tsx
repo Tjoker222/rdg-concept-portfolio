@@ -6,14 +6,16 @@ import { useEffect, useState } from "react";
 
 export const Navbar = () => {
   const navigationLink = [
-    { name: "Home" },
-    { name: "Missão" },
-    { name: "Explore" },
-    { name: "Serviços" },
-    { name: "Equipe" },
-    { name: "Contato" },
+    { name: "Home", tab: 'home' },
+    { name: "Missão", tab:'mission' },
+    { name: "Explore", tab: 'explore' },
+    { name: "Serviços", tab: 'services' },
+    { name: "Equipe", tab: 'team' },
+    { name: "Contato", tab: 'contact' },
   ];
   const [showBackground, setShowBackground] = useState(false);
+
+  const [selectedTopic, setSelectedTopic] = useState<String>("home");
 
   const { isMobile } = useResponsiveLayout();
 
@@ -31,6 +33,17 @@ export const Navbar = () => {
       setShowBackground(false);
     }
   };
+
+  const scrollFun = (id: string) => {
+    document
+      .querySelector(`#${id}`)
+      ?.scrollIntoView({ block: "center", behavior: "smooth" });
+  };
+
+  function tabBar(name: string) {
+    scrollFun(name);
+    setSelectedTopic(name);
+  }
 
   useEffect(() => {
     CurrentSidebarState === SidebarMobileType.OPEN
@@ -85,6 +98,9 @@ export const Navbar = () => {
               <p
                 className="text-style-regular-sm font-inter hover:text-black text-gray-700 hover:cursor-pointer"
                 key={nav.name}
+                onClick={() => {
+                  tabBar(nav.tab);
+                }}
               >
                 {nav.name}
               </p>

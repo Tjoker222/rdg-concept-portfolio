@@ -53,6 +53,7 @@ export const Services = () => {
         variants={boxVariant}
         initial="hidden"
         animate={control}
+        id='services'
       >
         {isMobile ? (
           <div className="px-[4.1rem] w-full flex flex-col gap-y-[4.8rem] items-center">

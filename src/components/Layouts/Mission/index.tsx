@@ -31,6 +31,7 @@ export const Mission = () => {
         variants={boxVariant}
         initial="hidden"
         animate={control}
+        id="mission"
       >
         <div className="w-full flex flex-row gap-x-[3.3rem] sm:px-[9.1rem]">
           <div className="hidden sm:flex flex-row gap-x-[2rem]">
