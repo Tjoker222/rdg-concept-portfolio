@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useResponsiveLayout } from "@/contexts/ResponsiveLayoutProvider";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
 const boxVariant = {
@@ -31,6 +31,7 @@ export const Mission = () => {
         variants={boxVariant}
         initial="hidden"
         animate={control}
+        id="mission"
       >
         <div className="w-full flex flex-row gap-x-[3.3rem] sm:px-[9.1rem]">
           <div className="hidden sm:flex flex-row gap-x-[2rem]">

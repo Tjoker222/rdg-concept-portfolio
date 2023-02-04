@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useResponsiveLayout } from "@/contexts/ResponsiveLayoutProvider";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { Input } from "@/components/Input";
 import { Button } from "@/components/Button";
@@ -33,6 +33,7 @@ export const ContactUs = () => {
         variants={boxVariant}
         initial="hidden"
         animate={control}
+        id='contact'
       >
         <div className="w-full flex flex-col gap-y-[8rem] sm:flex-row sm:gap-x-[5rem] px-[2.7rem] sm:px-[23rem] items-start">
           <div className="flex flex-col gap-y-[4rem] w-full">

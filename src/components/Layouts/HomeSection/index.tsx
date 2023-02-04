@@ -12,7 +12,7 @@ const boxVariant = {
   hidden: { opacity: 0 },
 };
 
-export const Business = () => {
+export const HomeSection = () => {
   const { isMobile } = useResponsiveLayout();
 
   const control = useAnimation();
@@ -34,6 +34,7 @@ export const Business = () => {
         variants={boxVariant}
         initial="hidden"
         animate={control}
+        id="home"
       >
         <div className="w-full flex flex-row mt-[5rem] sm:mt-[5rem] px-[3.4rem] sm:px-[21rem]">
           <div className="flex w-full flex-col gap-y-[4rem] sm:gap-y-[10.6rem] items-center sm:items-start">
@@ -50,14 +51,14 @@ export const Business = () => {
               </p>
             </div>
             <div className="flex flex-col gap-y-xl sm:flex-row sm:gap-x-xl">
-              <Link href={"https://calendly.com/rdgconcept/my-own-business"}>
+              <Link href={"https://calendly.com/rdgconcept/my-own-business"} target='_blank'>
                 <Button
                   title="Já possuo negócio"
                   size="small"
                   colorVariant="primary"
                 />
               </Link>
-              <Link href={"https://calendly.com/rdgconcept/start-new-business"}>
+              <Link href={"https://calendly.com/rdgconcept/start-new-business"} target='_blank'>
                 <Button
                   title="Começar negócio"
                   size="small"
@@ -78,7 +79,7 @@ export const Business = () => {
             </motion.div>
           </div>
           {!isMobile && (
-            <div className="flex relative z-50">
+            <div className="flex relative">
               <div className="absolute right-[35rem] top-[5.5rem] flex flex-col items-center">
                 <div className="h-[8rem] w-[0rem] border-dashed border-2 border-gray-800" />
                 <motion.div

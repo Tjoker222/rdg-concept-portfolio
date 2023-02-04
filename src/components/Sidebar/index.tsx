@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
+import { useState } from "react";
 import Image from "next/image";
 import { useSidebarMobileContext } from "@/contexts/SidebarMobileProvider";
 import { SidebarMobileType } from "@/types/sidebar-mobile";
@@ -18,14 +17,28 @@ export function Sidebar() {
   const { setCurrentSidebarState, CurrentSidebarState } =
     useSidebarMobileContext();
 
+  const [selectedTopic, setSelectedTopic] = useState<String>("home");
+
   const options = [
-    "Home",
-    "Missão",
-    "Explore",
-    "Serviços",
-    "Equipe",
-    "Contato",
+    { name: "Home", tab: "home" },
+    { name: "Missão", tab: "mission" },
+    { name: "Explore", tab: "explore" },
+    { name: "Serviços", tab: "services" },
+    { name: "Equipe", tab: "team" },
+    { name: "Contato", tab: "contact" },
   ];
+
+  const scrollFun = (id: string) => {
+    document
+      .querySelector(`#${id}`)
+      ?.scrollIntoView({ block: "center", behavior: "smooth" });
+  };
+
+  function tabBar(name: string) {
+    scrollFun(name);
+    setSelectedTopic(name);
+    setCurrentSidebarState(SidebarMobileType.CLOSE);
+  }
 
   return (
     <AnimatePresence>
@@ -45,11 +58,16 @@ export function Sidebar() {
             animate={{ x: 0 }}
             exit={{ x: 100 }}
             id="header"
-            className={`w-full z-50 h-full bg-white dark:bg-gray-700 transition-all flex fixed top-0 flex-col gap-y-xl px-[2.3rem] py-[2rem]`}
+            className={`w-full z-[60] h-full bg-white dark:bg-gray-700 transition-all flex fixed top-0 flex-col gap-y-xl px-[2.3rem] py-[2rem]`}
           >
             <div className="flex flex-row w-full justify-between items-center">
               <Link href={"/"} prefetch={false}>
-                <div className="relative w-[6.1rem] h-[6rem]">
+                <div
+                  className="relative w-[5rem] h-[5rem]"
+                  onClick={() => {
+                    tabBar("home");
+                  }}
+                >
                   <Image
                     src="/rdg-logo.svg"
                     alt="Logo of RDG"
@@ -74,10 +92,21 @@ export function Sidebar() {
 
             <div className="flex flex-col gap-y-[4.5rem] items-center w-full h-fit">
               {options.map((option) => (
-                <a key={option}>
+                <a
+                  key={option.name}
+                  onClick={() => {
+                    tabBar(option.tab);
+                  }}
+                >
                   <div className="flex flex-row gap-x-[1.9rem] items-center cursor-pointer hover:brightness-75 transition-all">
-                    <h5 className="font-inter text-style-medium-xl text-gray-700 hover:text-black">
-                      {option}
+                    <h5
+                      className={`font-inter text-style-medium-xl ${
+                        selectedTopic === option.tab
+                          ? "text-black"
+                          : "text-gray-700"
+                      }`}
+                    >
+                      {option.name}
                     </h5>
                   </div>
                 </a>

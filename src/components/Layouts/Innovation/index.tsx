@@ -1,7 +1,7 @@
 import { useResponsiveLayout } from "@/contexts/ResponsiveLayoutProvider";
 import { CardInnovation } from "@/components/Cards/CardInnovation";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
 const boxVariant = {

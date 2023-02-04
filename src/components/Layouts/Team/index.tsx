@@ -1,7 +1,7 @@
 import { CardTeam } from "@/components/Cards/CardTeam";
 import { TextSlider } from "@/components/TextSlider";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
 const boxVariant = {
@@ -60,6 +60,7 @@ export const Team = () => {
       variants={boxVariant}
       initial="hidden"
       animate={control}
+      id='team'
     >
       <div className="w-full flex flex-col gap-y-[4rem] items-center">
         <TextSlider />
