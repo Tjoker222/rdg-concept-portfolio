@@ -1,3 +1,4 @@
+import { LangProvider } from "@/contexts/LangProvider";
 import { ResponsiveLayoutProvider } from "@/contexts/ResponsiveLayoutProvider";
 import { SidebarMobileProvider } from "@/contexts/SidebarMobileProvider";
 import { useEffect, useState } from "react";
@@ -23,9 +24,11 @@ export function AppProviders({
   } else {
     return (
       <ResponsiveLayoutProvider>
-        <SidebarMobileProvider>
-          <DefaultLayout>{children}</DefaultLayout>
-        </SidebarMobileProvider>
+        <LangProvider>
+          <SidebarMobileProvider>
+            <DefaultLayout>{children}</DefaultLayout>
+          </SidebarMobileProvider>
+        </LangProvider>
       </ResponsiveLayoutProvider>
     );
   }
