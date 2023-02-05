@@ -26,11 +26,10 @@ export const Team = () => {
       office: "CEO - Lead Product Designer",
       imageUrl: "/yuri.svg",
       social: [
-        { name: "linkedin", link: "s" },
-        { name: "instagram", link: "s" },
-        { name: "facebook", link: "s" },
-        { name: "behance", link: "s" },
-        { name: "tiktok", link: "s" },
+        { name: "linkedin", link: "https://www.linkedin.com/in/rdg-concept/" },
+        { name: "instagram", link: "https://www.instagram.com/rdg.concept/" },
+        { name: "behance", link: "https://www.behance.net/YuriRLima" },
+        { name: "tiktok", link: "https://www.tiktok.com/@rdg.concept" },
       ],
     },
     {
@@ -38,16 +37,10 @@ export const Team = () => {
       office: "Lead Dev Front End",
       imageUrl: "/tob.png",
       social: [
-        { name: "linkedin", link: "s" },
-        { name: "link", link: "s" },
-      ],
-    },
-    {
-      name: "Yuri Rodrigues",
-      office: "CEO - Lead Product Designer",
-      imageUrl: "/yuri.svg",
-      social: [
-        { name: "linkedin", link: "s" },
+        {
+          name: "linkedin",
+          link: "https://www.linkedin.com/in/tobias-rodrigues-a1a5761b7/",
+        },
         { name: "link", link: "s" },
       ],
     },
@@ -60,7 +53,7 @@ export const Team = () => {
       variants={boxVariant}
       initial="hidden"
       animate={control}
-      id='team'
+      id="team"
     >
       <div className="w-full flex flex-col gap-y-[4rem] items-center">
         <TextSlider />

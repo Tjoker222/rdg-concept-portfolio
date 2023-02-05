@@ -73,7 +73,7 @@ export const Navbar = () => {
       >
         <div className="flex flex-row w-full sm:w-fit justify-between sm:justify-start sm:gap-x-md items-center">
           <div
-            className="relative w-[5rem] h-[5rem]"
+            className="relative w-[6rem] h-[5rem]"
             onClick={() => {
               tabBar("home");
             }}

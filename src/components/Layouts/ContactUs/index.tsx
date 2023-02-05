@@ -49,7 +49,7 @@ export const ContactUs = () => {
             </div>
           </div>
           <div className="w-full flex flex-col gap-y-[2.6rem] items-center justify-center">
-            <div className="w-[15rem] h-[15rem] relative">
+            <div className="w-[16rem] h-[15rem] relative">
               <Image
                 src="rdg-logo.svg"
                 alt="rdg concept icon"

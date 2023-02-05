@@ -4,15 +4,16 @@
     "pages": {
       "*": [
         "contact",
-        "explore",
         "footer",
-        "home-initial",
-        "mission",
         "newsletter",
         "team",
         "clients",
         "services",
-        "navbar"
+        "navbar",
+        "explore",
+        "innovation",
+        "mission",
+        "home-initial"
       ],
       "/": []
     }

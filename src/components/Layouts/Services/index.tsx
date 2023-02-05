@@ -30,8 +30,8 @@ export const Services = () => {
     {
       title: t('visual_title'),
       subtitle: t('visual_subtitle'),
-      src: "",
-      description: "",
+      src: "visual",
+      description: "Visual Identity",
     },
     {
       title: t('ecommerce_title'),

@@ -3,7 +3,8 @@ import { useState } from "react";
 import Image from "next/image";
 import { useSidebarMobileContext } from "@/contexts/SidebarMobileProvider";
 import { SidebarMobileType } from "@/types/sidebar-mobile";
-import { AnimatePresence, motion, useCycle } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import useTranslation from "next-translate/useTranslation";
 
 type SectionOptions =
   | "home"
@@ -14,18 +15,20 @@ type SectionOptions =
   | "contact";
 
 export function Sidebar() {
+    const { t } = useTranslation("navbar");
+
   const { setCurrentSidebarState, CurrentSidebarState } =
     useSidebarMobileContext();
 
   const [selectedTopic, setSelectedTopic] = useState<String>("home");
 
   const options = [
-    { name: "Home", tab: "home" },
-    { name: "Missão", tab: "mission" },
-    { name: "Explore", tab: "explore" },
-    { name: "Serviços", tab: "services" },
-    { name: "Equipe", tab: "team" },
-    { name: "Contato", tab: "contact" },
+    { name: t('home'), tab: "home" },
+    { name: t('mission'), tab: "mission" },
+    { name: t('explore'), tab: "explore" },
+    { name: t('services'), tab: "services" },
+    { name: t('team'), tab: "team" },
+    { name: t('contact'), tab: "contact" },
   ];
 
   const scrollFun = (id: string) => {

@@ -2,6 +2,8 @@ import { CardProject } from "@/components/Cards/CardProject";
 import { useResponsiveLayout } from "@/contexts/ResponsiveLayoutProvider";
 import * as Tabs from "@radix-ui/react-tabs";
 import { motion, useAnimation } from "framer-motion";
+import useTranslation from "next-translate/useTranslation";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
@@ -19,6 +21,8 @@ const boxVariant = {
 
 export const Explore = () => {
   const { isMobile } = useResponsiveLayout();
+
+  const { t } = useTranslation("explore");
 
   const [bodyTab, setBodyTab] = useState<"projects" | "videos">("projects");
 
@@ -46,15 +50,15 @@ export const Explore = () => {
         variants={boxVariant}
         initial="hidden"
         animate={control}
-        id='explore'
+        id="explore"
       >
         <div className="flex flex-col gap-y-[2rem]">
           <div className="flex flex-row gap-x-sm w-full sm:justify-start justify-center sm:px-[21rem]">
             <p className="font-inter text-style-bold-xl sm:text-style-bold-2xl text-transparent bg-clip-text bg-gradient-to-b from-violet-100 to-violet-200">
-              O que
+              {t("what")}
             </p>
             <span className="font-inter text-style-bold-xl sm:text-style-bold-2xl text-black">
-              gostamos de criar
+              {t("create")}
             </span>
           </div>
           <div className="flex flex-col gap-y-[1rem]">
@@ -64,7 +68,7 @@ export const Explore = () => {
               <>
                 <div className="w-fit flex flex-row gap-x-[2rem] items-start px-[9.1rem]">
                   <p className="text-black font-inter text-style-medium-base">
-                    Explore
+                    {t("explore")}
                   </p>
                   <div className="h-[5.2rem] w-[0.6rem] bg-gray-900" />
                 </div>
@@ -80,11 +84,13 @@ export const Explore = () => {
             )}
           </div>
           {!isMobile && (
-            <div className="w-full flex justify-center mt-[2rem]">
-              <p className="font-inter text-style-medium-lg text-gray-400 hover:cursor-pointer">
-                Veja mais
-              </p>
-            </div>
+            <Link href={"https://www.behance.net/YuriRLima"} target="_blank">
+              <div className="w-full items-center flex justify-center mt-[2rem] flex-col gap-y-[0.2rem]">
+                <p className="font-inter text-style-medium-lg text-gray-400 hover:cursor-pointer">
+                  {t("see_more")}
+                </p>
+              </div>
+            </Link>
           )}
         </div>
       </motion.div>
@@ -122,7 +128,20 @@ const Menu = ({ bodyTab }: MenuProps) => {
 };
 
 const Body = ({ bodyTab }: BodyProps) => {
-  const content = [{ name: "enutri" }, { name: "crypto" }, { name: "barber" }];
+  const content = [
+    {
+      name: "enutri",
+      link: "https://www.behance.net/gallery/160028143/Enutri-Suplementos",
+    },
+    {
+      name: "crypto",
+      link: "https://www.behance.net/gallery/154640205/CRYPTO-RIG-CLOUD-MINING",
+    },
+    {
+      name: "barber",
+      link: "https://www.behance.net/gallery/156999299/Amigo-Barber-Improving-business",
+    },
+  ];
   const { isMobile } = useResponsiveLayout();
 
   return (
@@ -134,6 +153,7 @@ const Body = ({ bodyTab }: BodyProps) => {
               src={project.name}
               description={project.name}
               key={project.name}
+              link={project.link}
             />
           ))}
         </div>
@@ -146,6 +166,7 @@ const Body = ({ bodyTab }: BodyProps) => {
                   src={project.name}
                   description={project.name}
                   key={project.name}
+                  link={project.link}
                 />
               ))}
             </div>
@@ -158,6 +179,7 @@ const Body = ({ bodyTab }: BodyProps) => {
                   src={project.name}
                   description={project.name}
                   key={project.name}
+                  link={project.link}
                 />
               ))}
             </div>
