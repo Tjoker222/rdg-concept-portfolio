@@ -1,7 +1,9 @@
-import Image from "next/image";
 import { Icon } from "../Icon";
+import useTranslation from "next-translate/useTranslation";
 
 export const Footer = () => {
+  const { t } = useTranslation("footer");
+
   const socialLinks = [
     { name: "instagram" },
     { name: "facebook" },
@@ -21,7 +23,7 @@ export const Footer = () => {
           ))}
         </div>
         <p className="w-full font-inter text-center sm:text-start text-style-medium-sx sm:text-style-medium-sm text-gray-500">
-          RDG Concept · Software Development and Design 2022
+          {t("copyright")}
         </p>
       </div>
     </>

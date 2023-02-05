@@ -3,6 +3,7 @@ import { Button } from "../Button";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Icon } from "../Layouts/Icon";
+import useTranslation from "next-translate/useTranslation";
 
 const boxVariant = {
   visible: { opacity: 1, transition: { duration: 0.5 } },
@@ -12,6 +13,8 @@ const boxVariant = {
 export function Discover() {
   const control = useAnimation();
   const [ref, inView] = useInView();
+
+  const { t } = useTranslation("newsletter");
 
   useEffect(() => {
     if (inView) {
@@ -30,10 +33,10 @@ export function Discover() {
     >
       <div className="w-full flex flex-col gap-y-[6.5rem] px-[45rem] items-center">
         <p className="w-[60rem] font-inter text-center text-style-bold-5xl text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
-          Transforme 
+          {t('make')}
           &nbsp;
           <span className="font-inter text-style-bold-5xl text-black">
-            seu negócio mais rentável com vendas online.
+            {t("transform")}
           </span>
         </p>
         <div className="w-full flex flex-row justify-between items-center">
@@ -44,7 +47,7 @@ export function Discover() {
           <Button
             size="medium"
             colorVariant="secondary"
-            title="Descubra agora."
+            title={t('discover')}
           />
 
           <Icon

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import useTranslation from "next-translate/useTranslation";
 import { useResponsiveLayout } from "@/contexts/ResponsiveLayoutProvider";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
@@ -12,6 +13,8 @@ const boxVariant = {
 };
 
 export const ContactUs = () => {
+  const { t } = useTranslation("contact");
+
   const { isMobile } = useResponsiveLayout();
 
   const control = useAnimation();
@@ -37,12 +40,12 @@ export const ContactUs = () => {
       >
         <div className="w-full flex flex-col gap-y-[8rem] sm:flex-row sm:gap-x-[5rem] px-[2.7rem] sm:px-[23rem] items-start">
           <div className="flex flex-col gap-y-[4rem] w-full">
-            <p className="text-black text-style-bold-2xl">Contate nos</p>
-            <Input placeholder="Nome Completo" full={true} />
-            <Input placeholder="Email" full={true} />
+            <p className="text-black text-style-bold-2xl">{t('contact_us')}</p>
+            <Input placeholder={t('full_name')} full={true} />
+            <Input placeholder={t('email')} full={true} />
             <textarea className="border-[0.1rem] border-solid" />
             <div className="w-full flex items-end justify-end">
-              <Button title="Enviar" full={isMobile} size="medium" />
+              <Button title={t('button_send')} full={isMobile} size="medium" />
             </div>
           </div>
           <div className="w-full flex flex-col gap-y-[2.6rem] items-center justify-center">
@@ -55,10 +58,7 @@ export const ContactUs = () => {
               />
             </div>
             <p className="w-full font-inter text-center sm:text-justify text-style-regular-sx sm:text-style-medium-sm text-gray-500">
-              Criada em 2022, a RDG Concept nasceu para resolver problemas de
-              pequenas e medias empresas em busca de mais visualizações da sua
-              marca ou serviços, através dos nosso serviços de identidade visual
-              e programação de Websites e Apps.{" "}
+              {t('about_us')}
             </p>
           </div>
         </div>

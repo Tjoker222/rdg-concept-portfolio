@@ -1,6 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+const nextTranslate = require("next-translate");
 
-module.exports = nextConfig
+module.exports = nextTranslate({
+  reactStrictMode: true,
+  swcMinify: true,
+  images: {
+    domains: ["media.graphassets.com"],
+  },
+  webpack: (config, { isServer, webpack }) => {
+    return config;
+  },
+});

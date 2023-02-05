@@ -3,6 +3,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { CardServices } from "@/components/Cards/CardServices";
+import useTranslation from "next-translate/useTranslation";
 
 const boxVariant = {
   visible: { opacity: 1, transition: { duration: 0.5 } },
@@ -11,6 +12,8 @@ const boxVariant = {
 
 export const Services = () => {
   const { isMobile } = useResponsiveLayout();
+
+  const {t} = useTranslation('services')
 
   const control = useAnimation();
   const [ref, inView] = useInView();
@@ -25,22 +28,22 @@ export const Services = () => {
 
   const servicesArr = [
     {
-      title: "Identidade Visual",
-      subtitle: "Criamos logotipo marcantes",
+      title: t('visual_title'),
+      subtitle: t('visual_subtitle'),
       src: "",
       description: "",
     },
     {
-      title: "Websites/e-commerce",
-      subtitle: "Venda mais com sites online",
+      title: t('ecommerce_title'),
+      subtitle: t('ecommerce_subtitle'),
       src: "ecommerce",
       description: "Websites and e-commerce",
     },
     {
-      title: "Aplicativos mobile",
-      subtitle: "Inove com aplicativos sofisticados",
+      title: t('mobile_title'),
+      subtitle: t('mobile_subtitle'),
       src: "mobileapp",
-      description: "Aplicativos Mobile",
+      description: "Mobile App",
     },
   ];
 
@@ -57,7 +60,7 @@ export const Services = () => {
         {isMobile ? (
           <div className="px-[4.1rem] w-full flex flex-col gap-y-[4.8rem] items-center">
             <p className="text-style-bold-xl text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
-              Serviços
+              {t('services')}
             </p>
             <div className="flex flex-col gap-y-base">
               {servicesArr.map((service) => (
@@ -79,7 +82,7 @@ export const Services = () => {
           <div className="w-full flex flex-row gap-x-[3.3rem] px-[9.1rem]">
             <div className="hidden sm:flex flex-row gap-x-[2rem]">
               <p className="font-inter text-style-medium-xl sm:text-style-medium-base text-black">
-                Serviços
+                {t('services')}
               </p>
               <div className="h-[5.2rem] w-[0.6rem] bg-gray-900" />
             </div>

@@ -4,7 +4,6 @@ const globalTheme = require("./src/lib/design/theme");
 const textStyles = require("./src/lib/design/typography");
 
 module.exports = {
-  darkMode: ["class"],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
