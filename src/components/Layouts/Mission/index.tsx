@@ -3,6 +3,7 @@ import { useResponsiveLayout } from "@/contexts/ResponsiveLayoutProvider";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import useTranslation from "next-translate/useTranslation";
 
 const boxVariant = {
   visible: { opacity: 1, transition: { duration: 0.5 } },
@@ -11,6 +12,8 @@ const boxVariant = {
 
 export const Mission = () => {
   const { isMobile } = useResponsiveLayout();
+
+  const { t } = useTranslation("mission");
 
   const control = useAnimation();
   const [ref, inView] = useInView();
@@ -36,22 +39,20 @@ export const Mission = () => {
         <div className="w-full flex flex-row gap-x-[3.3rem] sm:px-[9.1rem]">
           <div className="hidden sm:flex flex-row gap-x-[2rem]">
             <p className="font-inter text-style-medium-xl sm:text-style-medium-base text-black">
-              Missão
+              {t("mission")}
             </p>
             <div className="h-[5.2rem] w-[0.6rem] bg-gray-900" />
           </div>
           <div className="w-full flex flex-col sm:inline-flex gap-y-[5.4rem] h-[52rem] sm:h-[50rem]  bg-[url('/background-violet-mobile.svg')] sm:bg-[url('/background-violet.svg')] bg-cover items-start sm:relative">
             <div className="flex flex-col gap-y-[2.8rem] mt-[7.5rem] px-[3.2rem]">
               <p className="sm:w-[60rem] font-inter text-style-bold-2xl sm:text-style-bold-2xl text-transparent bg-clip-text bg-gradient-to-b from-violet-100 to-violet-200">
-                Segredos
+                {t("secrets")}
                 <span className="font-inter text-style-bold-2xl sm:text-style-bold-2xl text-black">
-                  : que fazem meus clientes vender mais com seus websites.
+                  {t("sell_more")}
                 </span>
               </p>
               <p className="sm:w-[50rem] font-inter text-black text-style-medium-base sm:text-style-medium-lg text-justify">
-                Você vera através dos meus clientes o quão benéfico e você
-                possuir um website para impulsionar as suas vendas na internet,
-                e o melhor de tudo como fazer sua marca conhecida.{" "}
+                {t("benefices")}
               </p>
               {isMobile && <NormalMission />}
             </div>
@@ -64,6 +65,8 @@ export const Mission = () => {
 };
 
 const MotionMission = () => {
+  const { t } = useTranslation("mission");
+
   return (
     <>
       <motion.div
@@ -84,7 +87,7 @@ const MotionMission = () => {
           />
         </div>
         <p className="w-fit text-justify font-inter text-style-bold-xl text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
-          Logotipo + Website = Vendas Online
+          {t("logo")}
         </p>
       </motion.div>
       <motion.div
@@ -105,8 +108,7 @@ const MotionMission = () => {
           />
         </div>
         <p className="sm:w-[50rem] text-justify font-inter text-style-bold-xl text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
-          Um ambiente claro e sustentável para receber seus clientes de forma
-          virtual.
+          {t("environment")}
         </p>
       </motion.div>
       <motion.div
@@ -127,7 +129,7 @@ const MotionMission = () => {
           />
         </div>
         <p className="w-fit text-justify font-inter text-style-bold-2xl text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
-          Criar marca de qualidade e reconhecida
+          {t("brand")}
         </p>
       </motion.div>
       <motion.div
@@ -148,7 +150,7 @@ const MotionMission = () => {
           />
         </div>
         <p className="w-fit text-justify font-inter text-style-bold-lg text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
-          Venda rápida e intuitiva
+          {t("fast")}
         </p>
       </motion.div>
     </>
@@ -156,14 +158,15 @@ const MotionMission = () => {
 };
 
 const NormalMission = () => {
+  const { t } = useTranslation("mission");
+
   const missionMobile = [
-    { title: "Logotipo + Website = Vendas Online" },
+    { title: t("logo") },
     {
-      title:
-        "Um ambiente claro e sustentável para receber seus clientes de forma virtual.",
+      title: t("environment"),
     },
-    { title: "Criar marca de qualidade e reconhecida" },
-    { title: "Venda rápida e intuitiva" },
+    { title: t("brand") },
+    { title: t("fast") },
   ];
 
   return (

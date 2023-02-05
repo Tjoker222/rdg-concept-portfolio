@@ -1,0 +1,21 @@
+{
+    "locales": ["en", "pt"],
+    "defaultLocale": "en",
+    "pages": {
+      "*": [
+        "contact",
+        "footer",
+        "newsletter",
+        "team",
+        "clients",
+        "services",
+        "navbar",
+        "explore",
+        "innovation",
+        "mission",
+        "home-initial"
+      ],
+      "/": []
+    }
+  }
+  

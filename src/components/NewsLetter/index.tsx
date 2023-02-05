@@ -5,6 +5,7 @@ import { Button } from "../Button";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useResponsiveLayout } from "@/contexts/ResponsiveLayoutProvider";
+import useTranslation from "next-translate/useTranslation";
 
 const boxVariant = {
   visible: { opacity: 1, transition: { duration: 0.5 } },
@@ -14,6 +15,8 @@ const boxVariant = {
 export function NewsLetter() {
   const control = useAnimation();
   const [ref, inView] = useInView();
+
+  const {t} = useTranslation('newsletter');
 
   const { isMobile } = useResponsiveLayout();
 
@@ -44,13 +47,13 @@ export function NewsLetter() {
               />
             </div>
           }
-          placeholder="Receba atualizações"
+          placeholder={t('email')}
           full={true}
         />
         <Button
           size="medium"
           colorVariant="primary"
-          title="Inscreva-se"
+          title={t('button_confirm')}
           full={isMobile}
         />
       </div>

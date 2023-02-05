@@ -30,7 +30,7 @@ export const CardTeam = ({
       <p className="text-[#888888] font-inter text-style-medium-sm">{office}</p>
       <div className="w-full flex flex-row items-start gap-x-md">
         {social.map((networks) => (
-          <Link href={networks.link} key={networks.name}>
+          <Link href={networks.link} key={networks.name} target='_blank' className="hover:scale-125 transition-all">
             <div className={`h-[1.8rem] w-[1.8rem] relative`}>
               <Image
                 src={`/${networks.name}.svg`}

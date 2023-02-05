@@ -3,21 +3,28 @@ import { SidebarMobileType } from "../../../types/sidebar-mobile";
 import { useSidebarMobileContext } from "../../../contexts/SidebarMobileProvider";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/contexts/LangProvider";
+import { Languages } from "@/types/languages";
+import useTranslation from "next-translate/useTranslation";
 
 export const Navbar = () => {
+  const { t } = useTranslation("navbar");
+
   const navigationLink = [
-    { name: "Home", tab: "home" },
-    { name: "Missão", tab: "mission" },
-    { name: "Explore", tab: "explore" },
-    { name: "Serviços", tab: "services" },
-    { name: "Equipe", tab: "team" },
-    { name: "Contato", tab: "contact" },
+    { name: t('home'), tab: "home" },
+    { name: t('mission'), tab: "mission" },
+    { name: t('explore'), tab: "explore" },
+    { name: t('services'), tab: "services" },
+    { name: t('team'), tab: "team" },
+    { name: t('contact'), tab: "contact" },
   ];
   const [showBackground, setShowBackground] = useState(false);
 
   const [selectedTopic, setSelectedTopic] = useState<String>("home");
 
   const { isMobile } = useResponsiveLayout();
+
+  const { handleChangeLanguage, selectedLanguage } = useLanguage();
 
   const { setCurrentSidebarState, CurrentSidebarState } =
     useSidebarMobileContext();
@@ -66,7 +73,7 @@ export const Navbar = () => {
       >
         <div className="flex flex-row w-full sm:w-fit justify-between sm:justify-start sm:gap-x-md items-center">
           <div
-            className="relative w-[5rem] h-[5rem]"
+            className="relative w-[6rem] h-[5rem]"
             onClick={() => {
               tabBar("home");
             }}
@@ -115,11 +122,28 @@ export const Navbar = () => {
           </div>
         )}
         {!isMobile && (
-          <div className="flex flex-row gap-x-[1.5rem]">
-            <p className="text-style-regular-sm font-inter hover:text-black text-gray-700 hover:cursor-pointer">
+          <div
+            className="flex flex-row gap-x-[1.5rem]"
+            onClick={() =>
+              selectedLanguage === "english"
+                ? handleChangeLanguage(Languages.PT)
+                : handleChangeLanguage(Languages.EN)
+            }
+          >
+            <p
+              className={`text-style-regular-sm font-inter ${
+                selectedLanguage === "português"
+                  ? "text-black"
+                  : "text-gray-700"
+              } hover:cursor-pointer`}
+            >
               PT
             </p>
-            <p className="text-style-regular-sm font-inter hover:text-black text-gray-700 hover:cursor-pointer">
+            <p
+              className={`text-style-regular-sm font-inter ${
+                selectedLanguage === "english" ? "text-black" : "text-gray-700"
+              } hover:cursor-pointer`}
+            >
               EN
             </p>
           </div>

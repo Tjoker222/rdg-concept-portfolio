@@ -2,10 +2,11 @@ import Image from "next/image";
 import { Button } from "@/components/Button";
 import { useResponsiveLayout } from "@/contexts/ResponsiveLayoutProvider";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { Icon } from "../Icon";
 import Link from "next/link";
+import useTranslation from "next-translate/useTranslation";
 
 const boxVariant = {
   visible: { opacity: 1, transition: { duration: 0.5 } },
@@ -14,6 +15,8 @@ const boxVariant = {
 
 export const HomeSection = () => {
   const { isMobile } = useResponsiveLayout();
+
+  const { t } = useTranslation("home-initial");
 
   const control = useAnimation();
   const [ref, inView] = useInView();
@@ -40,27 +43,32 @@ export const HomeSection = () => {
           <div className="flex w-full flex-col gap-y-[4rem] sm:gap-y-[10.6rem] items-center sm:items-start">
             <div className="flex flex-col gap-y-[2.8rem]">
               <p className="sm:w-[60rem] font-inter text-center sm:text-start text-style-bold-5xl sm:text-style-bold-5xl text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
-                RDG Concept
+                {t("rdg")}
                 <span className="font-inter text-style-bold-5xl sm:text-style-bold-5xl text-black">
-                  : seu business com um novo conceito.
+                  {t("business")}
                 </span>
               </p>
               <p className="sm:w-[40rem] font-inter text-center sm:text-justify text-style-medium-base sm:text-style-medium-lg text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
-                Revolucionamos o mercado de identidade visual e design de
-                interface para Apps e Websites.
+                {t("revolution")}
               </p>
             </div>
             <div className="flex flex-col gap-y-xl sm:flex-row sm:gap-x-xl">
-              <Link href={"https://calendly.com/rdgconcept/my-own-business"} target='_blank'>
+              <Link
+                href={"https://calendly.com/rdgconcept/my-own-business"}
+                target="_blank"
+              >
                 <Button
-                  title="Já possuo negócio"
+                  title={t("update_business")}
                   size="small"
                   colorVariant="primary"
                 />
               </Link>
-              <Link href={"https://calendly.com/rdgconcept/start-new-business"} target='_blank'>
+              <Link
+                href={"https://calendly.com/rdgconcept/start-new-business"}
+                target="_blank"
+              >
                 <Button
-                  title="Começar negócio"
+                  title={t("start_business")}
                   size="small"
                   colorVariant="secondary"
                 />
