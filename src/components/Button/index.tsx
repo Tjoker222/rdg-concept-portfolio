@@ -26,7 +26,7 @@ export const Button = ({
     ['flex justify-center px-[2.5rem] py-[2rem]']: size === 'small',
     ['flex justify-center px-[10rem] py-[2rem] sm:py-[1.5rem]']: size === 'medium',
     ['w-full']: full,
-    ['min-w-fit w-fit']: !full,
+    ['w-full sm:min-w-fit sm:w-fit']: !full,
   });
 
   return (

@@ -5,6 +5,8 @@ import { useSidebarMobileContext } from "@/contexts/SidebarMobileProvider";
 import { SidebarMobileType } from "@/types/sidebar-mobile";
 import { AnimatePresence, motion } from "framer-motion";
 import useTranslation from "next-translate/useTranslation";
+import { Languages } from "@/types/languages";
+import { useLanguage } from "@/contexts/LangProvider";
 
 type SectionOptions =
   | "home"
@@ -15,7 +17,9 @@ type SectionOptions =
   | "contact";
 
 export function Sidebar() {
-    const { t } = useTranslation("navbar");
+  const { t } = useTranslation("navbar");
+
+  const { handleChangeLanguage, selectedLanguage } = useLanguage();
 
   const { setCurrentSidebarState, CurrentSidebarState } =
     useSidebarMobileContext();
@@ -23,12 +27,12 @@ export function Sidebar() {
   const [selectedTopic, setSelectedTopic] = useState<String>("home");
 
   const options = [
-    { name: t('home'), tab: "home" },
-    { name: t('mission'), tab: "mission" },
-    { name: t('explore'), tab: "explore" },
-    { name: t('services'), tab: "services" },
-    { name: t('team'), tab: "team" },
-    { name: t('contact'), tab: "contact" },
+    { name: t("home"), tab: "home" },
+    { name: t("mission"), tab: "mission" },
+    { name: t("explore"), tab: "explore" },
+    { name: t("services"), tab: "services" },
+    { name: t("team"), tab: "team" },
+    { name: t("contact"), tab: "contact" },
   ];
 
   const scrollFun = (id: string) => {
@@ -61,12 +65,12 @@ export function Sidebar() {
             animate={{ x: 0 }}
             exit={{ x: 100 }}
             id="header"
-            className={`w-full z-[60] h-full bg-white dark:bg-gray-700 transition-all flex fixed top-0 flex-col gap-y-xl px-[2.3rem] py-[2rem]`}
+            className={`w-full z-[60] h-full bg-white transition-all flex fixed top-0 flex-col gap-y-xl px-[2.3rem] py-[2rem]`}
           >
             <div className="flex flex-row w-full justify-between items-center">
               <Link href={"/"} prefetch={false}>
                 <div
-                  className="relative w-[5rem] h-[5rem]"
+                  className="relative w-[6rem] h-[5rem]"
                   onClick={() => {
                     tabBar("home");
                   }}
@@ -75,7 +79,7 @@ export function Sidebar() {
                     src="/rdg-logo.svg"
                     alt="Logo of RDG"
                     fill={true}
-                    style={{ objectFit: "cover", opacity: 0.8 }}
+                    style={{ objectFit: "cover" }}
                   />
                 </div>
               </Link>
@@ -116,11 +120,30 @@ export function Sidebar() {
               ))}
             </div>
 
-            <div className="flex flex-row gap-x-[1.5rem] justify-center mt-[4rem]">
-              <p className="text-style-regular-base font-inter hover:text-black text-gray-700 hover:cursor-pointer">
+            <div
+              className="flex flex-row gap-x-[1.5rem] justify-center mt-[4rem]"
+              onClick={() =>
+                selectedLanguage === "english"
+                  ? handleChangeLanguage(Languages.PT)
+                  : handleChangeLanguage(Languages.EN)
+              }
+            >
+              <p
+                className={`text-style-regular-base font-inter ${
+                  selectedLanguage === "português"
+                    ? "text-black"
+                    : "text-gray-700"
+                } hover:cursor-pointer`}
+              >
                 PT
               </p>
-              <p className="text-style-regular-base font-inter hover:text-black text-gray-700 hover:cursor-pointer">
+              <p
+                className={`text-style-regular-base font-inter ${
+                  selectedLanguage === "english"
+                    ? "text-black"
+                    : "text-gray-700"
+                } hover:cursor-pointer`}
+              >
                 EN
               </p>
             </div>
