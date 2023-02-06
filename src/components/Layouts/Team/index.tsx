@@ -42,6 +42,10 @@ export const Team = () => {
           link: "https://www.linkedin.com/in/tobias-rodrigues-a1a5761b7/",
         },
         { name: "link", link: "s" },
+        {
+          name: 'github',
+          link: 'https://github.com/Tjoker222'
+        }
       ],
     },
   ];

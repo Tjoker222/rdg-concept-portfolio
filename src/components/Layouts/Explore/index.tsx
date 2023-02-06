@@ -101,11 +101,11 @@ export const Explore = () => {
 const Menu = ({ bodyTab }: MenuProps) => {
   const selected = "border-black text-black";
   const notSelected =
-    "border-transparent text-gray-500 hover:text-gray-600 hover:border-gray-400";
+    "border-transparent text-gray-100 hover:text-gray-600 hover:border-gray-400";
 
   return (
     <div className="px-lg sm:px-[21rem]">
-      <Tabs.List className="flex flex-row gap-base sm:gap-xl border-b-[0.1rem] border-gray-100 duration-300">
+      <Tabs.List className="flex flex-row gap-base sm:gap-xl border-b-[0.1rem] border-white duration-300">
         <Tabs.Trigger
           value="projects"
           className={`pb-sm text-style-semibold-sm sm:text-style-semibold-lg border-b-[0.3rem] duration-300 ${
