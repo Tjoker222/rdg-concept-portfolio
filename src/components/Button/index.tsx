@@ -19,9 +19,9 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   const buttonClasses = classNames({
-    [`bg-black text-white `]:
+    [`bg-black text-white border-2 border-black`]:
       colorVariant === 'primary',
-    [`bg-white text-black border-2 border-black`]:
+    [`bg-transparent text-black border-2 border-black`]:
       colorVariant === 'secondary',
     ['flex justify-center px-[2.5rem] py-[2rem]']: size === 'small',
     ['flex justify-center px-[10rem] py-[2rem] sm:py-[1.5rem]']: size === 'medium',

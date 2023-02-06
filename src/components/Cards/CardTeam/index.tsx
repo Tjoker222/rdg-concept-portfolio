@@ -27,7 +27,7 @@ export const CardTeam = ({
         )}
       </div>
       <p className="text-black font-inter text-style-bold-xl">{name}</p>
-      <p className="text-[#888888] font-inter text-style-medium-sm">{office}</p>
+      <p className="text-gray-600 font-inter text-style-medium-sm">{office}</p>
       <div className="flex flex-row items-start gap-x-md">
         {social.map((networks) => (
           <Link href={networks.link} key={networks.name} target='_blank' className="hover:scale-125 transition-all">

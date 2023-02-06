@@ -48,7 +48,7 @@ export const HomeSection = () => {
                   {t("business")}
                 </span>
               </p>
-              <p className="sm:w-[40rem] font-inter text-center sm:text-justify text-style-medium-base sm:text-style-medium-lg text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
+              <p className="sm:w-[40rem] font-inter text-center sm:text-justify text-style-medium-base sm:text-style-medium-lg text-white">
                 {t("revolution")}
               </p>
             </div>
@@ -89,7 +89,7 @@ export const HomeSection = () => {
           {!isMobile && (
             <div className="flex relative">
               <div className="absolute right-[35rem] top-[5.5rem] flex flex-col items-center">
-                <div className="h-[8rem] w-[0rem] border-dashed border-2 border-gray-800" />
+                <div className="h-[8rem] w-[0rem] border-dashed border-2 border-white" />
                 <motion.div
                   animate={{ y: [3, -3] }}
                   transition={{
@@ -106,10 +106,10 @@ export const HomeSection = () => {
                     style={{ objectFit: "cover" }}
                   />
                 </motion.div>
-                <div className="h-[8rem] w-[0rem] border-dashed border-2 border-gray-800" />
+                <div className="h-[8rem] w-[0rem] border-dashed border-2 border-white" />
               </div>
               <div className="absolute right-[18rem] top-[20rem] flex flex-col items-center">
-                <div className="h-[8rem] w-[0rem] border-dashed border-2 border-gray-800" />
+                <div className="h-[8rem] w-[0rem] border-dashed border-2 border-white" />
                 <motion.div
                   animate={{ y: [4, -4] }}
                   transition={{
@@ -126,10 +126,10 @@ export const HomeSection = () => {
                     style={{ objectFit: "cover" }}
                   />
                 </motion.div>
-                <div className="h-[8rem] w-[0rem] border-dashed border-2 border-gray-800" />
+                <div className="h-[8rem] w-[0rem] border-dashed border-2 border-white" />
               </div>
               <div className="absolute right-[10rem] bottom-[25rem] flex flex-col items-center">
-                <div className="h-[8rem] w-[0rem] border-dashed border-2 border-gray-800" />
+                <div className="h-[8rem] w-[0rem] border-dashed border-2 border-white" />
                 <motion.div
                   animate={{ y: [6, -6] }}
                   transition={{
@@ -146,10 +146,10 @@ export const HomeSection = () => {
                     style={{ objectFit: "cover" }}
                   />
                 </motion.div>
-                <div className="h-[8rem] w-[0rem] border-dashed border-2 border-gray-800" />
+                <div className="h-[8rem] w-[0rem] border-dashed border-2 border-white" />
               </div>
               <div className="absolute left-[2rem] top-[5rem] flex flex-col items-center">
-                <div className="h-[8rem] w-[0rem] border-dashed border-2 border-gray-800" />
+                <div className="h-[8rem] w-[0rem] border-dashed border-2 border-white" />
                 <motion.div
                   animate={{ y: [5, -5] }}
                   transition={{
@@ -166,7 +166,7 @@ export const HomeSection = () => {
                     style={{ objectFit: "cover" }}
                   />
                 </motion.div>
-                <div className="h-[8rem] w-[0rem] border-dashed border-2 border-gray-800" />
+                <div className="h-[8rem] w-[0rem] border-dashed border-2 border-white" />
               </div>
             </div>
           )}
