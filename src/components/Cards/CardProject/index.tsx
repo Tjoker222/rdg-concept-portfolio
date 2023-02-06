@@ -14,12 +14,13 @@ export const CardProject = ({
 }: CardInnovationProps) => {
   return (
     <Link href={link} target="_blank" className="hover:scale-105 transition-all">
-      <div className="w-[31rem] h-[20rem] relative">
+      <div className="w-[31rem] h-[20rem] relative shadow-2xl rounded-2xl">
         <Image
           src={`/${src}.svg`}
           alt={description}
           fill={true}
           style={{ objectFit: "cover" }}
+          className='rounded-2xl'
         />
       </div>
     </Link>

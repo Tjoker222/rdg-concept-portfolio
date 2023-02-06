@@ -54,7 +54,7 @@ export const Explore = () => {
       >
         <div className="flex flex-col gap-y-[2rem]">
           <div className="flex flex-row gap-x-sm w-full sm:justify-start justify-center sm:px-[21rem]">
-            <p className="font-inter text-style-bold-xl sm:text-style-bold-2xl text-transparent bg-clip-text bg-gradient-to-b from-violet-100 to-violet-200">
+            <p className="font-inter text-style-bold-xl sm:text-style-bold-2xl text-transparent bg-clip-text bg-white">
               {t("what")}
             </p>
             <span className="font-inter text-style-bold-xl sm:text-style-bold-2xl text-black">
@@ -70,7 +70,7 @@ export const Explore = () => {
                   <p className="text-black font-inter text-style-medium-base">
                     {t("explore")}
                   </p>
-                  <div className="h-[5.2rem] w-[0.6rem] bg-gray-50" />
+                  <div className="h-[5.2rem] w-[0.6rem] bg-white" />
                 </div>
                 <Tabs.Root
                   onValueChange={handleChangeBodyOnChangeTab}

@@ -19,12 +19,13 @@ export const CardServices = ({
     <>
       {mediaType === "image" ? (
         <div className="flex flex-col gap-y-[1.3rem] hover:cursor-pointer hover:scale-105 transition-all">
-          <div className="sm:w-[25rem] h-[30rem] relative">
+          <div className="sm:w-[25rem] h-[30rem] relative shadow-2xl rounded-2xl">
             <Image
               src={`/${src}.svg`}
               alt={description}
               fill={true}
               style={{ objectFit: "cover" }}
+              className='rounded-2xl'
             />
           </div>
           <p className="font-inter text-style-bold-lg text-black">{title}</p>
@@ -35,12 +36,13 @@ export const CardServices = ({
       ) : (
         <div className="flex flex-col w-full gap-y-[2.7rem] hover:cursor-pointer hover:scale-105 transition-all">
           <div className="bg-white flex justify-center items-center w-full sm:w-[25rem] h-[50rem]">
-            <div className="w-[3.2rem] h-[3.2rem] relative">
+            <div className="w-[3.2rem] h-[3.2rem] relative shadow-2xl rounded-2xl">
               <Image
                 src={`/Play.svg`}
                 alt="play button"
                 fill={true}
                 style={{ objectFit: "cover" }}
+                className='rounded-2xl'
               />
             </div>
           </div>
