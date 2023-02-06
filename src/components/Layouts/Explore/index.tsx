@@ -66,7 +66,7 @@ export const Explore = () => {
               <Body bodyTab={"projects"} />
             ) : (
               <>
-                <div className="w-fit flex flex-row gap-x-[2rem] items-start px-[9.1rem]">
+                <div className="flex flex-row gap-x-[2rem] items-start px-[9.1rem]">
                   <p className="text-black font-inter text-style-medium-base">
                     {t("explore")}
                   </p>
@@ -104,11 +104,11 @@ const Menu = ({ bodyTab }: MenuProps) => {
     "border-transparent text-gray-200 hover:text-gray-400 hover:border-gray-400";
 
   return (
-    <div className="w-full h-fit px-lg sm:px-[21rem]">
-      <Tabs.List className="w-full h-fit flex flex-row gap-base sm:gap-xl border-b-[0.1rem] border-gray-100 duration-300">
+    <div className="px-lg sm:px-[21rem]">
+      <Tabs.List className="flex flex-row gap-base sm:gap-xl border-b-[0.1rem] border-gray-100 duration-300">
         <Tabs.Trigger
           value="projects"
-          className={`w-fit h-fit pb-sm text-style-semibold-sm sm:text-style-semibold-lg border-b-[0.3rem] duration-300 ${
+          className={`pb-sm text-style-semibold-sm sm:text-style-semibold-lg border-b-[0.3rem] duration-300 ${
             bodyTab === "projects" ? selected : notSelected
           }`}
         >
@@ -116,7 +116,7 @@ const Menu = ({ bodyTab }: MenuProps) => {
         </Tabs.Trigger>
         <Tabs.Trigger
           value="videos"
-          className={`w-fit h-fit pb-sm text-style-semibold-sm sm:text-style-semibold-lg border-b-[0.3rem] duration-300 ${
+          className={`pb-sm text-style-semibold-sm sm:text-style-semibold-lg border-b-[0.3rem] duration-300 ${
             bodyTab === "videos" ? selected : notSelected
           }`}
         >

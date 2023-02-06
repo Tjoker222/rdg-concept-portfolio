@@ -9,7 +9,7 @@ interface DefaultLayoutProps {
 const DefaultLayout = ({ children }: DefaultLayoutProps) => {
   return (
     <>
-      <div className="w-full flex min-h-screen bg-gray-50 duration-300">
+      <div className="flex min-h-screen bg-gray-50 duration-300">
         <Sidebar />
         <div className="w-full flex flex-col items-center justify-between">
           <div className="w-full flex flex-col gap-xl items-center">

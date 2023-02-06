@@ -36,7 +36,7 @@ export const Mission = () => {
         animate={control}
         id="mission"
       >
-        <div className="w-full flex flex-row gap-x-[3.3rem] sm:px-[9.1rem]">
+        <div className="flex flex-row gap-x-[3.3rem] sm:px-[9.1rem]">
           <div className="hidden sm:flex flex-row gap-x-[2rem]">
             <p className="font-inter text-style-medium-xl sm:text-style-medium-base text-black">
               {t("mission")}
@@ -86,7 +86,7 @@ const MotionMission = () => {
             style={{ objectFit: "cover" }}
           />
         </div>
-        <p className="w-fit text-justify font-inter text-style-bold-xl text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
+        <p className="text-justify font-inter text-style-bold-xl text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
           {t("logo")}
         </p>
       </motion.div>
@@ -128,7 +128,7 @@ const MotionMission = () => {
             style={{ objectFit: "cover" }}
           />
         </div>
-        <p className="w-fit text-justify font-inter text-style-bold-2xl text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
+        <p className="text-justify font-inter text-style-bold-2xl text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
           {t("brand")}
         </p>
       </motion.div>
@@ -149,7 +149,7 @@ const MotionMission = () => {
             style={{ objectFit: "cover" }}
           />
         </div>
-        <p className="w-fit text-justify font-inter text-style-bold-lg text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
+        <p className="text-justify font-inter text-style-bold-lg text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
           {t("fast")}
         </p>
       </motion.div>
@@ -184,7 +184,7 @@ const NormalMission = () => {
               style={{ objectFit: "cover" }}
             />
           </div>
-          <p className="w-fit text-justify font-inter text-style-bold-sx text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
+          <p className="text-justify font-inter text-style-bold-sx text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
             {mission.title}
           </p>
         </div>

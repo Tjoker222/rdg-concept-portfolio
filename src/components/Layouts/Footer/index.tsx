@@ -21,7 +21,7 @@ export const Footer = () => {
             </Link>
           ))}
         </div>
-        <p className="w-full font-inter text-center sm:text-start text-style-medium-sx sm:text-style-medium-sm text-gray-500">
+        <p className="font-inter text-center sm:text-start text-style-medium-sx sm:text-style-medium-sm text-gray-500">
           {t("copyright")}
         </p>
       </div>

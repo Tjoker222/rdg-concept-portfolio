@@ -58,7 +58,7 @@ export const Services = () => {
         id='services'
       >
         {isMobile ? (
-          <div className="px-[4.1rem] w-full flex flex-col gap-y-[4.8rem] items-center">
+          <div className="px-[4.1rem] flex flex-col gap-y-[4.8rem] items-center">
             <p className="text-style-bold-xl text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
               {t('services')}
             </p>
@@ -71,7 +71,7 @@ export const Services = () => {
                   <p className="text-style-bold-2xl font-inter text-black">
                     {service.title}
                   </p>
-                  <p className="text-style-bold-base font-inter text-gray-800">
+                  <p className="text-style-bold-base font-inter text-gray-800 text-center">
                     {service.subtitle}
                   </p>
                 </div>
@@ -79,7 +79,7 @@ export const Services = () => {
             </div>
           </div>
         ) : (
-          <div className="w-full flex flex-row gap-x-[3.3rem] px-[9.1rem]">
+          <div className="flex flex-row gap-x-[3.3rem] px-[9.1rem]">
             <div className="hidden sm:flex flex-row gap-x-[2rem]">
               <p className="font-inter text-style-medium-xl sm:text-style-medium-base text-black">
                 {t('services')}
@@ -87,7 +87,7 @@ export const Services = () => {
               <div className="h-[5.2rem] w-[0.6rem] bg-gray-900" />
             </div>
 
-            <div className="flex w-full flex-row gap-x-[13.6rem]">
+            <div className="flex flex-row gap-x-[13.6rem]">
               {servicesArr.map((service) => (
                 <CardServices
                   title={service.title}

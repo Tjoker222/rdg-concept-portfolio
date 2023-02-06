@@ -53,7 +53,7 @@ export function Sidebar() {
         <motion.aside
           initial={{ width: 0 }}
           animate={{
-            width: "auto",
+            width: "auto"
           }}
           exit={{
             width: 0,
@@ -61,13 +61,13 @@ export function Sidebar() {
           }}
         >
           <motion.div
-            initial={{ x: 100 }}
+            initial={{ x: 500 }}
             animate={{ x: 0 }}
-            exit={{ x: 100 }}
+            exit={{ x: 500 }}
             id="header"
             className={`w-full z-[60] h-full bg-white transition-all flex fixed top-0 flex-col gap-y-xl px-[2.3rem] py-[2rem]`}
           >
-            <div className="flex flex-row w-full justify-between items-center">
+            <div className="flex flex-row justify-between items-center">
               <Link href={"/"} prefetch={false}>
                 <div
                   className="relative w-[6rem] h-[5rem]"
@@ -97,7 +97,7 @@ export function Sidebar() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-y-[4.5rem] items-center w-full h-fit">
+            <div className="flex flex-col gap-y-[4.5rem] items-center h-fit">
               {options.map((option) => (
                 <a
                   key={option.name}

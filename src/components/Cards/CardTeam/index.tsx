@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-interface CardInnovationProps {
+interface CardTeamProps {
   name: string;
   office: string;
   imageUrl?: string;
@@ -13,10 +13,10 @@ export const CardTeam = ({
   imageUrl,
   office,
   social,
-}: CardInnovationProps) => {
+}: CardTeamProps) => {
   return (
-    <div className="w-full flex flex-col gap-y-[1.3rem] sm:w-[40rem]">
-      <div className={`w-full h-[30rem] relative ${!imageUrl && "bg-white"}`}>
+    <div className="flex flex-col gap-y-[1.3rem] w-full sm:w-[40rem]">
+      <div className={`h-[30rem] relative ${!imageUrl && "bg-white"}`}>
         {imageUrl && (
           <Image
             src={imageUrl}
@@ -28,7 +28,7 @@ export const CardTeam = ({
       </div>
       <p className="text-black font-inter text-style-bold-xl">{name}</p>
       <p className="text-[#888888] font-inter text-style-medium-sm">{office}</p>
-      <div className="w-full flex flex-row items-start gap-x-md">
+      <div className="flex flex-row items-start gap-x-md">
         {social.map((networks) => (
           <Link href={networks.link} key={networks.name} target='_blank' className="hover:scale-125 transition-all">
             <div className={`h-[1.8rem] w-[1.8rem] relative`}>

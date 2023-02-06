@@ -61,7 +61,7 @@ export const Clients = () => {
               {t("clients")}
             </p>
             <div className="w-full flex flex-col gap-y-[2.3rem]">
-              <div className="w-full flex flex-row justify-between items-center">
+              <div className="flex flex-row justify-between items-center">
                 <Icon
                   iconUrl="/ArrowBendDownLeft.svg"
                   description="arrow bend down left"
@@ -110,7 +110,7 @@ export const Clients = () => {
                 </p>
               </div>
             </div>
-            <div className="w-full h-[0.005rem] border-[0.1rem] border-solid border-gray-100" />
+            <div className="h-[0.005rem] border-[0.1rem] border-solid border-gray-100" />
             <Splide
               ref={carouselRef}
               options={{
