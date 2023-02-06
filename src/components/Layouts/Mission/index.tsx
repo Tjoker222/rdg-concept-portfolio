@@ -41,7 +41,7 @@ export const Mission = () => {
             <p className="font-inter text-style-medium-xl sm:text-style-medium-base text-black">
               {t("mission")}
             </p>
-            <div className="h-[5.2rem] w-[0.6rem] bg-gray-900" />
+            <div className="h-[5.2rem] w-[0.6rem] bg-gray-50" />
           </div>
           <div className="w-full flex flex-col sm:inline-flex gap-y-[5.4rem] h-[52rem] sm:h-[50rem]  bg-[url('/background-violet-mobile.svg')] sm:bg-[url('/background-violet.svg')] bg-cover items-start sm:relative">
             <div className="flex flex-col gap-y-[2.8rem] mt-[7.5rem] px-[3.2rem]">

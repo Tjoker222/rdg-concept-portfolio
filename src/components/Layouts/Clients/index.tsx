@@ -100,17 +100,17 @@ export const Clients = () => {
         ) : (
           <div className="flex flex-col gap-y-[6rem] px-[18rem]">
             <div className="flex flex-row gap-x-[2.3rem]">
-              <div className="h-[5.2rem] w-[0.6rem] bg-gray-900" />
+              <div className="h-[5.2rem] w-[0.6rem] bg-gray-50" />
               <div className="flex flex-col gap-y-[2.1rem]">
                 <p className="font-inter text-style-bold-2xl text-transparent bg-clip-text bg-gradient-to-b from-violet-100 to-violet-200">
                   {t("clients")}
                 </p>
-                <p className="text-style-medium-base text-gray-500">
+                <p className="text-style-medium-base text-gray-600">
                   {t("clients_world")}
                 </p>
               </div>
             </div>
-            <div className="h-[0.005rem] border-[0.1rem] border-solid border-gray-100" />
+            <div className="w-full h-[0.005rem] border-[0.1rem] border-solid border-gray-100" />
             <Splide
               ref={carouselRef}
               options={{

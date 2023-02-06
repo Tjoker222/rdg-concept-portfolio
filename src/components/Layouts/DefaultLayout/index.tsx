@@ -1,4 +1,5 @@
 import { Sidebar } from "@/components/Sidebar";
+import { Background } from "../Background";
 import { Footer } from "../Footer";
 import { Navbar } from "../Navbar";
 
@@ -9,11 +10,13 @@ interface DefaultLayoutProps {
 const DefaultLayout = ({ children }: DefaultLayoutProps) => {
   return (
     <>
-      <div className="flex min-h-screen bg-gray-50 duration-300">
+
+      <div className="flex min-h-screen duration-300">
         <Sidebar />
         <div className="w-full flex flex-col items-center justify-between">
           <div className="w-full flex flex-col gap-xl items-center">
             <Navbar />
+            <Background />
             <div className="w-full flex flex-col gap-base items-center mt-[10rem]">
               {children}
             </div>

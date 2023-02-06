@@ -43,7 +43,7 @@ export function TextSlider() {
         {textAmount.map((text) => (
           <li
             key={text}
-            className="whitespace-nowrap font-INTER text-style-bold-7xl text-[#c4c4c4]"
+            className="whitespace-nowrap font-INTER text-style-bold-7xl text-gray-600"
           >
             {t('team')}
           </li>

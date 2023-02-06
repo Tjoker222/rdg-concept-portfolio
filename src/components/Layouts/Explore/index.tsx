@@ -70,7 +70,7 @@ export const Explore = () => {
                   <p className="text-black font-inter text-style-medium-base">
                     {t("explore")}
                   </p>
-                  <div className="h-[5.2rem] w-[0.6rem] bg-gray-900" />
+                  <div className="h-[5.2rem] w-[0.6rem] bg-gray-50" />
                 </div>
                 <Tabs.Root
                   onValueChange={handleChangeBodyOnChangeTab}
@@ -86,7 +86,7 @@ export const Explore = () => {
           {!isMobile && (
             <Link href={"https://www.behance.net/YuriRLima"} target="_blank">
               <div className="w-full items-center flex justify-center mt-[2rem] flex-col gap-y-[0.2rem]">
-                <p className="font-inter text-style-medium-lg text-gray-400 hover:cursor-pointer">
+                <p className="font-inter text-style-medium-lg text-gray-600 hover:cursor-pointer">
                   {t("see_more")}
                 </p>
               </div>
@@ -101,7 +101,7 @@ export const Explore = () => {
 const Menu = ({ bodyTab }: MenuProps) => {
   const selected = "border-black text-black";
   const notSelected =
-    "border-transparent text-gray-200 hover:text-gray-400 hover:border-gray-400";
+    "border-transparent text-gray-500 hover:text-gray-600 hover:border-gray-400";
 
   return (
     <div className="px-lg sm:px-[21rem]">

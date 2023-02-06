@@ -57,7 +57,7 @@ export const ContactUs = () => {
                 style={{ objectFit: "cover" }}
               />
             </div>
-            <p className="w-full font-inter text-center sm:text-justify text-style-regular-sx sm:text-style-medium-sm text-gray-500">
+            <p className="w-full font-inter text-center sm:text-justify text-style-regular-sx sm:text-style-medium-sm text-gray-600">
               {t('about_us')}
             </p>
           </div>

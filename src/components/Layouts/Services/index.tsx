@@ -84,7 +84,7 @@ export const Services = () => {
               <p className="font-inter text-style-medium-xl sm:text-style-medium-base text-black">
                 {t('services')}
               </p>
-              <div className="h-[5.2rem] w-[0.6rem] bg-gray-900" />
+              <div className="h-[5.2rem] w-[0.6rem] bg-gray-50" />
             </div>
 
             <div className="flex flex-row gap-x-[13.6rem]">

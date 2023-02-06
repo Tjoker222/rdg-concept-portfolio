@@ -11,12 +11,12 @@ export const Navbar = () => {
   const { t } = useTranslation("navbar");
 
   const navigationLink = [
-    { name: t('home'), tab: "home" },
-    { name: t('mission'), tab: "mission" },
-    { name: t('explore'), tab: "explore" },
-    { name: t('services'), tab: "services" },
-    { name: t('team'), tab: "team" },
-    { name: t('contact'), tab: "contact" },
+    { name: t("home"), tab: "home" },
+    { name: t("mission"), tab: "mission" },
+    { name: t("explore"), tab: "explore" },
+    { name: t("services"), tab: "services" },
+    { name: t("team"), tab: "team" },
+    { name: t("contact"), tab: "contact" },
   ];
   const [showBackground, setShowBackground] = useState(false);
 
@@ -66,9 +66,8 @@ export const Navbar = () => {
     <>
       <div
         className={`flex w-full fixed top-0 z-50 py-[2rem] ${
-          showBackground
-            ? "backdrop-blur-sm shadow-md shadow-gray-200 bg-gray-50/80"
-            : "bg-gray-50"
+          showBackground &&
+          "backdrop-blur-sm shadow-md shadow-gray-200 bg-gray-50/80"
         } px-[2.3rem] sm:px-[14rem] sm:py-[3rem] justify-between items-center`}
       >
         <div className="flex flex-row w-full sm:w-fit justify-between sm:justify-start sm:gap-x-md items-center">

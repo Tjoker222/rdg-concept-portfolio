@@ -28,7 +28,7 @@ export const CardServices = ({
             />
           </div>
           <p className="font-inter text-style-bold-lg text-black">{title}</p>
-          <p className="font-inter text-style-medium-sm text-gray-500">
+          <p className="font-inter text-style-medium-sm text-gray-600">
             {subtitle}
           </p>
         </div>
@@ -46,7 +46,7 @@ export const CardServices = ({
           </div>
           <div className="flex flex-col gap-y-[1.4rem]">
             <p className="font-inter text-style-bold-lg text-black">{title}</p>
-            <p className="font-inter text-style-medium-sm text-gray-500">
+            <p className="font-inter text-style-medium-sm text-gray-600">
               {subtitle}
             </p>
           </div>
