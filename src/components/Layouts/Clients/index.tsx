@@ -100,9 +100,9 @@ export const Clients = () => {
         ) : (
           <div className="flex flex-col gap-y-[6rem] px-[18rem]">
             <div className="flex flex-row gap-x-[2.3rem]">
-              <div className="h-[5.2rem] w-[0.6rem] bg-gray-50" />
+              <div className="h-[5.2rem] w-[0.6rem] bg-white" />
               <div className="flex flex-col gap-y-[2.1rem]">
-                <p className="font-inter text-style-bold-2xl text-transparent bg-clip-text bg-gradient-to-b from-violet-100 to-violet-200">
+                <p className="font-inter text-style-bold-2xl text-transparent bg-clip-text bg-white">
                   {t("clients")}
                 </p>
                 <p className="text-style-medium-base text-gray-600">
@@ -110,7 +110,7 @@ export const Clients = () => {
                 </p>
               </div>
             </div>
-            <div className="w-full h-[0.005rem] border-[0.1rem] border-solid border-gray-100" />
+            <div className="w-full h-[0.1rem] bg-gradient-to-r from-white" />
             <Splide
               ref={carouselRef}
               options={{

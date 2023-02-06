@@ -28,9 +28,9 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       flex
       items-center
       gap-sm 
-      bg-white
+      bg-transparent
       border-[0.1rem]
-      border-[#9f9f9f]
+      border-gray-600
       transition-all 
       duration-300
       px-xl 
@@ -71,7 +71,8 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             text-style-medium-sm
             font-inter
             w-full h-full
-            placeholder:text-[#888888]
+            bg-transparent
+            placeholder:text-gray-600
             placeholder:font-inter
             placeholder:text-style-medium-sm
             `}

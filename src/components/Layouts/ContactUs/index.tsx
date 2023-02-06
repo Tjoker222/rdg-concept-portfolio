@@ -43,7 +43,7 @@ export const ContactUs = () => {
             <p className="text-black text-style-bold-2xl">{t('contact_us')}</p>
             <Input placeholder={t('full_name')} full={true} />
             <Input placeholder={t('email')} full={true} />
-            <textarea className="border-[0.1rem] border-solid" />
+            <textarea className="border-[0.1rem] border-solid bg-transparent border-gray-600" />
             <div className="w-full flex items-end justify-end">
               <Button title={t('button_send')} full={isMobile} size="medium" />
             </div>
