@@ -3,7 +3,6 @@
     "defaultLocale": "en",
     "pages": {
       "*": [
-        "contact",
         "footer",
         "newsletter",
         "team",
@@ -13,7 +12,8 @@
         "explore",
         "innovation",
         "mission",
-        "home-initial"
+        "home-initial",
+        "contact"
       ],
       "/": []
     }
