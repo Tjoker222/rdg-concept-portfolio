@@ -13,7 +13,7 @@ export const CardProject = ({
   link,
 }: CardInnovationProps) => {
   return (
-    <Link href={link} target="_blank" className="hover:scale-105 transition-all">
+    <Link href={link} target="_blank" className="hover:scale-95 transition-all">
       <div className="w-[31rem] h-[20rem] relative shadow-2xl rounded-2xl">
         <Image
           src={`/${src}.svg`}
