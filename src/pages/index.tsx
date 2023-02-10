@@ -24,7 +24,6 @@ const Home: NextPage = () => {
         <Services />
         <Clients />
         <Team />
-        <NewsLetter />
         {!isMobile && <Discover />}
         <ContactUs/>
       </div>
