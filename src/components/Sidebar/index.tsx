@@ -80,6 +80,7 @@ export function Sidebar() {
                     alt="Logo of RDG"
                     fill={true}
                     style={{ objectFit: "cover" }}
+                    priority={true}
                   />
                 </div>
               </Link>

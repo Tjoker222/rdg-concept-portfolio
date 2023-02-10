@@ -32,10 +32,10 @@ export const Clients = () => {
   }, [control, inView]);
 
   const clientsArr = [
-    { name: "Claudio", subtitle: "CEO Seedlisting" },
-    { name: "Gustavo Dubra", subtitle: "CEO Enutri Suplementos" },
-    { name: "Gabriel Barreto", subtitle: "CEO Gestor Bs" },
-    { name: "Claudio", subtitle: "CEO Seedlisting" },
+    { name: "Claudio", subtitle: "CEO Seedlisting", id: 1 },
+    { name: "Gustavo Dubra", subtitle: "CEO Enutri Suplementos", id: 2 },
+    { name: "Gabriel Barreto", subtitle: "CEO Gestor Bs", id: 3 },
+    { name: "Claudio", subtitle: "CEO Seedlisting", id: 4 },
   ];
 
   const settings = {
@@ -57,7 +57,7 @@ export const Clients = () => {
       >
         {isMobile ? (
           <div className="px-[2.1rem] flex flex-col gap-y-[5.3rem] justify-center items-center">
-            <p className="font-inter text-style-bold-xl text-transparent bg-clip-text bg-gradient-to-b from-violet-100 to-violet-200">
+            <p className="font-inter text-style-bold-xl text-transparent bg-clip-text bg-white">
               {t("clients")}
             </p>
             <div className="w-full flex flex-col gap-y-[2.3rem]">
@@ -85,7 +85,7 @@ export const Clients = () => {
                 }}
               >
                 {clientsArr.map((client) => (
-                  <SplideSlide key={client.name} className="bg-transparent">
+                  <SplideSlide key={client.id} className="bg-transparent">
                     <CardServices
                       title={client.name}
                       subtitle={client.subtitle}
@@ -122,7 +122,7 @@ export const Clients = () => {
               }}
             >
               {clientsArr.map((client) => (
-                <SplideSlide key={client.name}>
+                <SplideSlide key={client.id}>
                   <CardServices
                     title={client.name}
                     subtitle={client.subtitle}

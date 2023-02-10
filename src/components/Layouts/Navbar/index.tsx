@@ -79,6 +79,7 @@ export const Navbar = () => {
           >
             <Image
               src="/rdg-logo.svg"
+              priority={true}
               alt="Logo of RDG"
               fill={true}
               style={{ objectFit: "cover" }}
