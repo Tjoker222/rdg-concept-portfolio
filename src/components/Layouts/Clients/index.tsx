@@ -32,10 +32,10 @@ export const Clients = () => {
   }, [control, inView]);
 
   const clientsArr = [
-    { name: "Claudio", subtitle: "CEO Seedlisting" },
-    { name: "Gustavo Dubra", subtitle: "CEO Enutri Suplementos" },
-    { name: "Gabriel Barreto", subtitle: "CEO Gestor Bs" },
-    { name: "Claudio", subtitle: "CEO Seedlisting" },
+    { name: "Claudio", subtitle: "CEO Seedlisting", id: 1 },
+    { name: "Gustavo Dubra", subtitle: "CEO Enutri Suplementos", id: 2 },
+    { name: "Gabriel Barreto", subtitle: "CEO Gestor Bs", id: 3 },
+    { name: "Claudio", subtitle: "CEO Seedlisting", id: 4 },
   ];
 
   const settings = {
@@ -85,7 +85,7 @@ export const Clients = () => {
                 }}
               >
                 {clientsArr.map((client) => (
-                  <SplideSlide key={client.name} className="bg-transparent">
+                  <SplideSlide key={client.id} className="bg-transparent">
                     <CardServices
                       title={client.name}
                       subtitle={client.subtitle}
@@ -122,7 +122,7 @@ export const Clients = () => {
               }}
             >
               {clientsArr.map((client) => (
-                <SplideSlide key={client.name}>
+                <SplideSlide key={client.id}>
                   <CardServices
                     title={client.name}
                     subtitle={client.subtitle}
