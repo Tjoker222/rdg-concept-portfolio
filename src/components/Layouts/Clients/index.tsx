@@ -57,7 +57,7 @@ export const Clients = () => {
       >
         {isMobile ? (
           <div className="px-[2.1rem] flex flex-col gap-y-[5.3rem] justify-center items-center">
-            <p className="font-inter text-style-bold-xl text-transparent bg-clip-text bg-gradient-to-b from-violet-100 to-violet-200">
+            <p className="font-inter text-style-bold-xl text-transparent bg-clip-text bg-white">
               {t("clients")}
             </p>
             <div className="w-full flex flex-col gap-y-[2.3rem]">

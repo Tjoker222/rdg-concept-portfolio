@@ -2,16 +2,18 @@ import Image from "next/image";
 import useTranslation from "next-translate/useTranslation";
 import { useResponsiveLayout } from "@/contexts/ResponsiveLayoutProvider";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { Input } from "@/components/Input";
 import { Button } from "@/components/Button";
 import emailjs from "@emailjs/browser";
+import { LoadingSpinner } from "@/components/LoadingSpinner";
 
 const boxVariant = {
   visible: { opacity: 1, transition: { duration: 0.5 } },
   hidden: { opacity: 0 },
 };
+declare let process: { env: { [key: string]: string } };
 
 export const ContactUs = () => {
   const { t } = useTranslation("contact");
@@ -20,6 +22,7 @@ export const ContactUs = () => {
 
   const control = useAnimation();
   const [ref, inView] = useInView();
+  const [isSending, setIsSending] = useState<boolean>(false);
 
   useEffect(() => {
     if (inView) {
@@ -33,20 +36,23 @@ export const ContactUs = () => {
 
   const sendEmail = (e: any) => {
     e.preventDefault();
+    setIsSending(true);
     if (form && form.current)
       emailjs
         .sendForm(
-          "service_50vwf1k",
-          "template_4ucx0ti",
+          process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID,
+          process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID,
           form.current,
-          "OpUjsKuLoL4-V3c1M"
+          process.env.NEXT_PUBLIC_EMAIL_API_KEY
         )
         .then(
           (result) => {
             console.log(result.text);
+            setIsSending(false);
           },
           (error) => {
             console.log(error.text);
+            setIsSending(false);
           }
         );
   };
@@ -77,16 +83,25 @@ export const ContactUs = () => {
               name="message"
             />
             <div className="w-full flex items-end justify-end">
-              <Button title={t("button_send")} full={isMobile} size="medium" />
+              {isSending ? (
+                <LoadingSpinner />
+              ) : (
+                <Button
+                  title={t("button_send")}
+                  full={isMobile}
+                  size="medium"
+                />
+              )}
             </div>
           </form>
           <div className="w-full flex flex-col gap-y-[2.6rem] items-center justify-center">
             <div className="w-[16rem] h-[15rem] relative">
               <Image
-                src="rdg-logo.svg"
+                src="/rdg-logo.svg"
                 alt="rdg concept icon"
                 fill={true}
                 style={{ objectFit: "cover" }}
+                priority={true}
               />
             </div>
             <p className="w-full font-inter text-center sm:text-justify text-style-regular-sx sm:text-style-medium-sm text-gray-600">
