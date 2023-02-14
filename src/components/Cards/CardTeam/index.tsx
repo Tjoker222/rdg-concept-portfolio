@@ -33,7 +33,7 @@ export const CardTeam = ({
           <Link href={networks.link} key={networks.name} target='_blank' className="hover:scale-125 transition-all">
             <div className={`h-[1.8rem] w-[1.8rem] relative`}>
               <Image
-                src={`/${networks.name}.svg`}
+                src={`/social/${networks.name}.svg`}
                 alt={networks.name}
                 fill={true}
                 style={{ objectFit: "cover" }}

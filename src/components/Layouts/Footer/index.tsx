@@ -17,7 +17,7 @@ export const Footer = () => {
         <div className="flex flex-row gap-x-[1.5rem]">
           {socialLinks.map((link) => (
             <Link href={link.link} key={link.name} target="_blank">
-              <Icon description={link.name} iconUrl={`/${link.name}.svg`} />
+              <Icon description={link.name} iconUrl={`/social/${link.name}.svg`} />
             </Link>
           ))}
         </div>

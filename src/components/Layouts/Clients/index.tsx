@@ -7,6 +7,8 @@ import { useInView } from "react-intersection-observer";
 import { CardServices } from "@/components/Cards/CardServices";
 import { Icon } from "../Icon";
 import useTranslation from "next-translate/useTranslation";
+import Image from "next/image";
+import { CardRating } from "@/components/Cards/CardRating";
 
 const boxVariant = {
   visible: { opacity: 1, transition: { duration: 0.5 } },
@@ -22,6 +24,7 @@ export const Clients = () => {
 
   const control = useAnimation();
   const [ref, inView] = useInView();
+  const hash_star = Array.from({ length: 5 }, (_, i) => i + 1);
 
   useEffect(() => {
     if (inView) {
@@ -37,14 +40,6 @@ export const Clients = () => {
     { name: "Gabriel Barreto", subtitle: "CEO Gestor Bs", id: 3 },
     { name: "Claudio", subtitle: "CEO Seedlisting", id: 4 },
   ];
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
 
   return (
     <>
@@ -111,29 +106,116 @@ export const Clients = () => {
               </div>
             </div>
             <div className="w-full h-[0.1rem] bg-gradient-to-r from-white" />
-            <Splide
-              ref={carouselRef}
-              options={{
-                type: "loop",
-                perPage: 4,
-                perMove: 1,
-                arrows: false,
-                pagination: false,
-              }}
-            >
-              {clientsArr.map((client) => (
-                <SplideSlide key={client.id}>
-                  <CardServices
-                    title={client.name}
-                    subtitle={client.subtitle}
-                    description={client.name}
-                    mediaType="video"
-                  />
-                </SplideSlide>
-              ))}
-            </Splide>
+            <div className="flex flex-col relative items-center h-[60rem]">
+              <div className="flex flex-col gap-x-xl">
+                <p className="font-inter text-style-bold-5xl text-gray-600">
+                  {t("rating")}
+                </p>
+                <div className="flex flex-row w-full items-center justify-center">
+                  {hash_star.map((_, i) => (
+                    <div
+                      className="w-[2.6rem] h-[2.6rem] relative rounded-full"
+                      key={i}
+                    >
+                      <Image
+                        src="icon/star-icon.svg"
+                        alt="star"
+                        fill={true}
+                        style={{ objectFit: "cover" }}
+                        className="rounded-full"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <MotionRating />
+            </div>
           </div>
         )}
+      </motion.div>
+    </>
+  );
+};
+
+const MotionRating = () => {
+  const { t } = useTranslation("mission");
+
+  return (
+    <>
+      <motion.div
+        animate={{ y: [6, -6], opacity: 0 }}
+        transition={{
+          repeat: Infinity,
+          repeatType: "reverse",
+          duration: 3.5,
+        }}
+        className="hidden sm:flex flex-row items-center sm:absolute gap-x-[2.7rem] top-[12rem] left-0"
+      >
+        <CardRating
+          description="I want to thank Yuri for the excellent work. It went way beyond expectations with the project he made for me. If you need to create an authentic character or a perfect caricature, recommended or Yuri. It was so worth it."
+          imageUrl="/clients/bs.svg"
+          name="Gestor Bs"
+        />
+      </motion.div>
+      <motion.div
+        animate={{ y: [5, -5], opacity: 0 }}
+        transition={{
+          repeat: Infinity,
+          repeatType: "reverse",
+          duration: 2.5,
+        }}
+        className="hidden sm:flex flex-row items-center sm:absolute gap-x-[2.7rem] top-[10rem] right-[5rem]"
+      >
+        <CardRating
+          description="I've already designed 4 web applications with mobile portability. Always attentive to the customer's placement, in addition to being careful with the features I went through."
+          imageUrl="/clients/germano.svg"
+          name="Germano Gomes"
+        />
+      </motion.div>
+      <motion.div
+        animate={{ y: [6, -6], opacity: 0 }}
+        transition={{
+          repeat: Infinity,
+          repeatType: "reverse",
+          duration: 2,
+        }}
+        className="hidden sm:flex flex-row items-center sm:absolute gap-x-[2.7rem] bottom-0 left-[40rem]"
+      >
+        <CardRating
+          description="A great job and fast service delivery. Congratulations."
+          imageUrl="/clients/helena.svg"
+          name="Helena"
+        />
+      </motion.div>
+      <motion.div
+        animate={{ y: [7, -7], opacity: 0 }}
+        transition={{
+          repeat: Infinity,
+          repeatType: "reverse",
+          duration: 4,
+        }}
+        className="hidden sm:flex flex-row items-center sm:absolute gap-x-[2.7rem] bottom-[16rem] left-[60rem]"
+      >
+        <CardRating
+          description="Excellent and thorough work."
+          imageUrl="/clients/augustin.svg"
+          name="Agustin Gonzalez"
+        />
+      </motion.div>
+      <motion.div
+        animate={{ y: [7, -7], opacity: 0 }}
+        transition={{
+          repeat: Infinity,
+          repeatType: "reverse",
+          duration: 3,
+        }}
+        className="hidden sm:flex flex-row items-center sm:absolute gap-x-[2.7rem] bottom-[10rem] left-[6rem]"
+      >
+        <CardRating
+          description="The company is very professional, it accompanies the client at every stage of the project, in addition to delivering a high-value product."
+          imageUrl="/clients/dione.svg"
+          name="Dione Bastos"
+        />
       </motion.div>
     </>
   );

@@ -43,7 +43,7 @@ export const Mission = () => {
             </p>
             <div className="h-[5.2rem] w-[0.6rem] bg-gray-50" />
           </div>
-          <div className="w-full flex flex-col sm:inline-flex gap-y-[5.4rem] h-[52rem] sm:h-[50rem]  bg-[url('/background-violet-mobile.svg')] sm:bg-[url('/background-violet.svg')] bg-cover items-start sm:relative">
+          <div className="w-full flex flex-col sm:inline-flex gap-y-[5.4rem] h-[52rem] sm:h-[50rem]  bg-[url('/background-shape/background-violet-mobile.svg')] sm:bg-[url('/background-shape/background-violet.svg')] bg-cover items-start sm:relative">
             <div className="flex flex-col gap-y-[2.8rem] mt-[7.5rem] px-[3.2rem]">
               <p className="sm:w-[60rem] font-inter text-style-bold-2xl sm:text-style-bold-2xl text-transparent bg-clip-text bg-gradient-to-b from-violet-100 to-violet-200">
                 {t("secrets")}
@@ -80,7 +80,7 @@ const MotionMission = () => {
       >
         <div className="w-[1.5rem] h-[1.5rem] relative">
           <Image
-            src="/ellipse.svg"
+            src="/icon/ellipse.svg"
             alt="ellipse"
             fill={true}
             style={{ objectFit: "cover" }}
@@ -101,7 +101,7 @@ const MotionMission = () => {
       >
         <div className="w-[1.5rem] h-[1.5rem] relative">
           <Image
-            src="/ellipse.svg"
+            src="/icon/ellipse.svg"
             alt="ellipse"
             fill={true}
             style={{ objectFit: "cover" }}
@@ -122,7 +122,7 @@ const MotionMission = () => {
       >
         <div className="w-[1.5rem] h-[1.5rem] relative">
           <Image
-            src="/ellipse.svg"
+            src="/icon/ellipse.svg"
             alt="ellipse"
             fill={true}
             style={{ objectFit: "cover" }}
@@ -143,7 +143,7 @@ const MotionMission = () => {
       >
         <div className="w-[1.5rem] h-[1.5rem] relative">
           <Image
-            src="/ellipse.svg"
+            src="/icon/ellipse.svg"
             alt="ellipse"
             fill={true}
             style={{ objectFit: "cover" }}
@@ -178,7 +178,7 @@ const NormalMission = () => {
         >
           <div className="w-[1rem] h-[1rem] relative">
             <Image
-              src="/ellipse.svg"
+              src="/icon/ellipse.svg"
               alt="ellipse"
               fill={true}
               style={{ objectFit: "cover" }}
