@@ -38,7 +38,7 @@ export const CardServices = ({
           <div className="bg-white flex justify-center items-center w-full sm:w-[25rem] h-[50rem]">
             <div className="w-[3.2rem] h-[3.2rem] relative shadow-2xl rounded-2xl">
               <Image
-                src={`/Play.svg`}
+                src={`/icon/Play.svg`}
                 alt="play button"
                 fill={true}
                 style={{ objectFit: "cover" }}

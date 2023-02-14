@@ -30,19 +30,19 @@ export const Services = () => {
     {
       title: t('visual_title'),
       subtitle: t('visual_subtitle'),
-      src: "visual",
+      src: "projects/visual",
       description: "Visual Identity",
     },
     {
       title: t('ecommerce_title'),
       subtitle: t('ecommerce_subtitle'),
-      src: "ecommerce",
+      src: "projects/ecommerce",
       description: "Websites and e-commerce",
     },
     {
       title: t('mobile_title'),
       subtitle: t('mobile_subtitle'),
-      src: "mobileapp",
+      src: "projects/mobileapp",
       description: "Mobile App",
     },
   ];

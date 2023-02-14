@@ -40,7 +40,7 @@ export function NewsLetter() {
           icon={
             <div className="w-[2.5rem] h-[2.5rem] relative">
               <Image
-                src="/signal.svg"
+                src="/icon/signal.svg"
                 alt="signal icon"
                 fill={true}
                 style={{ objectFit: "cover" }}

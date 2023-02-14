@@ -1,4 +1,3 @@
-import { Icon } from "@/components/Layouts/Icon";
 import Image from "next/image";
 
 interface CardRatingProps {

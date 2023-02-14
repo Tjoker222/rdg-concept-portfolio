@@ -92,7 +92,7 @@ export const Navbar = () => {
               onClick={() => handleSidebarMobileChange(SidebarMobileType.OPEN)}
             >
               <Image
-                src="/Lista.svg"
+                src="/icon/Lista.svg"
                 alt="Lista"
                 fill={true}
                 style={{ objectFit: "cover" }}

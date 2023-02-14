@@ -100,7 +100,7 @@ export const HomeSection = () => {
                   className="w-[8.7rem] h-[8.7rem] relative"
                 >
                   <Image
-                    src="/react-icon.svg"
+                    src="/icon/react-icon.svg"
                     alt="react"
                     fill={true}
                     style={{ objectFit: "cover" }}
@@ -120,7 +120,7 @@ export const HomeSection = () => {
                   className="w-[6.7rem] h-[6.7rem] relative"
                 >
                   <Image
-                    src="/notion-icon.svg"
+                    src="/icon/notion-icon.svg"
                     alt="notion"
                     fill={true}
                     style={{ objectFit: "cover" }}
@@ -140,7 +140,7 @@ export const HomeSection = () => {
                   className="w-[12.7rem] h-[12.7rem] relative"
                 >
                   <Image
-                    src="/figma-icon.svg"
+                    src="/social/figma-icon.svg"
                     alt="figma"
                     fill={true}
                     style={{ objectFit: "cover" }}
@@ -160,7 +160,7 @@ export const HomeSection = () => {
                   className="w-[5.5rem] h-[5.5rem] relative"
                 >
                   <Image
-                    src="/github-icon.svg"
+                    src="/social/github-icon.svg"
                     alt="github"
                     fill={true}
                     style={{ objectFit: "cover" }}

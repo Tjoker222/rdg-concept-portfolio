@@ -90,7 +90,7 @@ export function Sidebar() {
                 onClick={() => setCurrentSidebarState(SidebarMobileType.CLOSE)}
               >
                 <Image
-                  src="/X.svg"
+                  src="icon/X.svg"
                   alt="Lista"
                   fill={true}
                   style={{ objectFit: "cover", opacity: 0.8 }}
