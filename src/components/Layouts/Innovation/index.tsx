@@ -66,7 +66,6 @@ export const Innovation = () => {
       <div
         className="box"
         ref={ref}
-        animate={control}
       >
         <div className="flex flex-col gap-y-[10rem] px-[15rem]">
           <div className="flex flex-row gap-x-sm">

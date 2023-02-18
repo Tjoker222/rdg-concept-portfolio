@@ -24,12 +24,9 @@ export function Discover() {
     }
   }, [control, inView]);
   return (
-    <motion.div
+    <div
       className="box"
       ref={ref}
-      variants={boxVariant}
-      initial="hidden"
-      animate={control}
     >
       <div className="w-full flex flex-col gap-y-[6.5rem] px-[45rem] items-center">
         <p className="w-[60rem] font-inter text-center text-style-bold-5xl text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-violet-200">
@@ -56,6 +53,6 @@ export function Discover() {
           />
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
