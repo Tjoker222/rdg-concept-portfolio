@@ -43,12 +43,9 @@ export const Clients = () => {
 
   return (
     <>
-      <motion.div
+      <div
         className="box"
         ref={ref}
-        variants={boxVariant}
-        initial="hidden"
-        animate={control}
       >
         {isMobile ? (
           <div className="px-[2.1rem] flex flex-col gap-y-[5.3rem] justify-center items-center">
@@ -132,7 +129,7 @@ export const Clients = () => {
             </div>
           </div>
         )}
-      </motion.div>
+      </div>
     </>
   );
 };

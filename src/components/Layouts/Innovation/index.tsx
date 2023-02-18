@@ -63,11 +63,9 @@ export const Innovation = () => {
 
   return (
     <>
-      <motion.div
+      <div
         className="box"
         ref={ref}
-        variants={boxVariant}
-        initial="hidden"
         animate={control}
       >
         <div className="flex flex-col gap-y-[10rem] px-[15rem]">
@@ -89,7 +87,7 @@ export const Innovation = () => {
             ))}
           </div>
         </div>
-      </motion.div>
+      </div>
     </>
   );
 };

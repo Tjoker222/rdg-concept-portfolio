@@ -44,12 +44,9 @@ export const Explore = () => {
 
   return (
     <>
-      <motion.div
+      <div
         className="box"
         ref={ref}
-        variants={boxVariant}
-        initial="hidden"
-        animate={control}
         id="explore"
       >
         <div className="flex flex-col gap-y-[2rem]">
@@ -93,7 +90,7 @@ export const Explore = () => {
             </Link>
           )}
         </div>
-      </motion.div>
+      </div>
     </>
   );
 };

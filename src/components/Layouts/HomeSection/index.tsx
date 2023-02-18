@@ -31,12 +31,9 @@ export const HomeSection = () => {
 
   return (
     <>
-      <motion.div
+      <div
         className="box"
         ref={ref}
-        variants={boxVariant}
-        initial="hidden"
-        animate={control}
         id="home"
       >
         <div className="flex flex-row mt-[5rem] sm:mt-[5rem] px-[3.4rem] sm:px-[21rem]">
@@ -171,7 +168,7 @@ export const HomeSection = () => {
             </div>
           )}
         </div>
-      </motion.div>
+      </div>
     </>
   );
 };

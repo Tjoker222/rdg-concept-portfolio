@@ -49,12 +49,9 @@ export const Services = () => {
 
   return (
     <>
-      <motion.div
+      <div
         className="box"
         ref={ref}
-        variants={boxVariant}
-        initial="hidden"
-        animate={control}
         id='services'
       >
         {isMobile ? (
@@ -101,7 +98,7 @@ export const Services = () => {
             </div>
           </div>
         )}
-      </motion.div>
+      </div>
     </>
   );
 };

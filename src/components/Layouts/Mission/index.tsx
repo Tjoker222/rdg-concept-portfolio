@@ -28,12 +28,9 @@ export const Mission = () => {
 
   return (
     <>
-      <motion.div
+      <div
         className="box"
         ref={ref}
-        variants={boxVariant}
-        initial="hidden"
-        animate={control}
         id="mission"
       >
         <div className="flex flex-row gap-x-[3.3rem] sm:px-[9.1rem]">
@@ -59,7 +56,7 @@ export const Mission = () => {
             {!isMobile && <MotionMission />}
           </div>
         </div>
-      </motion.div>
+      </div>
     </>
   );
 };

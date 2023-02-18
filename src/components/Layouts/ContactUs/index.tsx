@@ -59,12 +59,9 @@ export const ContactUs = () => {
 
   return (
     <>
-      <motion.div
+      <div
         className="box"
         ref={ref}
-        variants={boxVariant}
-        initial="hidden"
-        animate={control}
         id="contact"
       >
         <div className="w-full flex flex-col gap-y-[8rem] sm:flex-row sm:gap-x-[5rem] px-[2.7rem] sm:px-[23rem] items-start">
@@ -109,7 +106,7 @@ export const ContactUs = () => {
             </p>
           </div>
         </div>
-      </motion.div>
+      </div>
     </>
   );
 };
